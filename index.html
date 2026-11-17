@@ -1,0 +1,2779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class 11 Physics Interactive E-Book | Acceleration Due to Gravity (g)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <!-- KaTeX for Textbook-Grade Math Rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      overflow-x: hidden;
+    }
+    .mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .formula-box {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+      border-left: 4px solid #38bdf8;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+    }
+    .formula-highlight {
+      background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(168, 85, 247, 0.15));
+      border: 2px solid #ec4899;
+      box-shadow: 0 0 20px rgba(236, 72, 153, 0.25);
+    }
+    .step-card {
+      transition: all 0.25s ease;
+    }
+    .step-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.5);
+    }
+    /* Custom Range Sliders */
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      background: #334155;
+      height: 8px;
+      border-radius: 999px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      margin-top: -5px;
+      background-color: #38bdf8;
+      height: 18px;
+      width: 18px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.8);
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      box-shadow: 0 8px 20px -4px rgba(99, 102, 241, 0.6);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-950 text-slate-100">
+
+  <!-- TOP BANNER & AUTHOR HEADER -->
+  <header class="relative overflow-hidden bg-gradient-to-r from-indigo-950 via-slate-900 to-purple-950 border-b border-slate-800 shadow-2xl">
+    <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 24px 24px;"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-2">
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40">
+              Class 11 Physics • NCERT Chapter 8
+            </span>
+            <span class="px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">
+              Interactive Digital E-Book
+            </span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-indigo-300">
+            Gravitation: Acceleration Due to Gravity ($g$) & Its Variations
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base mt-1">
+            Interactive Simulations, Step-by-Step Textbook Derivations, Numericals & Gamified Assessment
+          </p>
+        </div>
+
+        <!-- Credits Card -->
+        <div class="flex items-center gap-3.5 bg-slate-900/90 backdrop-blur-md px-4 py-3 rounded-2xl border border-indigo-500/40 shadow-lg shrink-0">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 via-orange-500 to-pink-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-md">
+            HM
+          </div>
+          <div>
+            <div class="text-[11px] uppercase tracking-widest text-amber-400 font-bold">Created & Curated By</div>
+            <div class="text-base sm:text-lg font-extrabold text-white leading-tight">Hrishikesh M</div>
+            <div class="text-xs font-semibold text-indigo-300">PGT Physics</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STICKY NAVIGATION TABS -->
+  <nav class="sticky top-0 z-40 bg-slate-900/95 backdrop-blur-md border-b border-slate-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 py-3 overflow-x-auto no-scrollbar" id="tab-nav">
+        <button onclick="switchTab(0)" class="tab-btn active flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-slate-700/80 bg-slate-800/70 text-slate-300 hover:bg-slate-800 transition shrink-0">
+          <span class="w-6 h-6 rounded-lg bg-cyan-500/20 text-cyan-300 flex items-center justify-center font-mono text-xs">1</span>
+          <span>Relation Between $g$ & $G$</span>
+        </button>
+        <button onclick="switchTab(1)" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-slate-700/80 bg-slate-800/70 text-slate-300 hover:bg-slate-800 transition shrink-0">
+          <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-mono text-xs">2</span>
+          <span>Variation with Altitude ($h$)</span>
+        </button>
+        <button onclick="switchTab(2)" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-slate-700/80 bg-slate-800/70 text-slate-300 hover:bg-slate-800 transition shrink-0">
+          <span class="w-6 h-6 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center font-mono text-xs">3</span>
+          <span>Variation with Depth ($d$)</span>
+        </button>
+        <button onclick="switchTab(3)" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-slate-700/80 bg-slate-800/70 text-slate-300 hover:bg-slate-800 transition shrink-0">
+          <span class="w-6 h-6 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center font-mono text-xs">4</span>
+          <span>Variation with Shape of Earth</span>
+        </button>
+        <button onclick="switchTab(4)" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-slate-700/80 bg-slate-800/70 text-slate-300 hover:bg-slate-800 transition shrink-0">
+          <span class="w-6 h-6 rounded-lg bg-pink-500/20 text-pink-300 flex items-center justify-center font-mono text-xs">5</span>
+          <span>Practice Problems (10)</span>
+        </button>
+        <button onclick="switchTab(5)" class="tab-btn flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold border border-slate-700/80 bg-slate-800/70 text-slate-300 hover:bg-slate-800 transition shrink-0">
+          <span class="w-6 h-6 rounded-lg bg-yellow-500/20 text-yellow-300 flex items-center justify-center font-mono text-xs">6</span>
+          <span>Gamified Quiz Arena</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN E-BOOK CONTENT CONTAINER -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- =====================================================================
+         TAB 1: ACCELERATION DUE TO GRAVITY & RELATION BETWEEN g AND G
+         ===================================================================== -->
+    <section id="tab-0" class="tab-section space-y-8">
+      <!-- Concept Overview Banner -->
+      <div class="bg-gradient-to-br from-slate-900 via-indigo-950/60 to-slate-900 rounded-3xl p-6 sm:p-8 border border-indigo-500/30 shadow-xl">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="space-y-4 max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-wider">
+              Section 8.18 • Fundamental Concept
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+              What is Acceleration Due to Gravity ($g$)?
+            </h2>
+            <p class="text-slate-300 leading-relaxed">
+              The force of attraction exerted by the Earth on a body is called <strong>gravity</strong>. Whenever a body falls freely towards the surface of the Earth under the action of gravity alone, its velocity increases at a constant rate.
+            </p>
+            <div class="p-4 rounded-2xl bg-slate-950/70 border border-cyan-500/30 text-slate-200">
+              <strong class="text-cyan-400">Definition:</strong> The uniform acceleration produced in a freely falling body due to the gravitational pull of the Earth is called <strong>acceleration due to gravity</strong> and is denoted by the letter $g$.
+              <div class="mt-2 flex flex-wrap gap-3 text-xs sm:text-sm font-semibold text-slate-300">
+                <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700">SI Unit: $\text{m s}^{-2}$ or $\text{N kg}^{-1}$</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700">Dimensions: $[\text{M}^0\text{L}^1\text{T}^{-2}]$</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700">Standard Earth Value: $g \approx 9.8\text{ m s}^{-2}$</span>
+                <span class="px-3 py-1 rounded-lg bg-slate-800 border border-slate-700">Direction: Towards Centre $O$ of Earth</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Air vs Vacuum Free-Fall Note from Textbook -->
+          <div class="w-full lg:w-96 bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 space-y-2 shrink-0">
+            <div class="flex items-center gap-2 text-amber-300 font-bold text-sm uppercase tracking-wider">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Crucial Concept: Vacuum vs. Air</span>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              When two bodies of different masses or volumes fall from the same height in <strong>vacuum</strong>, they reach the Earth at the <strong>exact same time</strong> because $g$ is independent of the falling body's mass.
+            </p>
+            <p class="text-xs sm:text-sm text-amber-200/90 leading-relaxed pt-1 border-t border-amber-500/20">
+              In an <strong>air medium</strong>, if two bodies of the same mass but different volumes fall from the same height, the body of <em>smaller volume</em> reaches earlier because the upward thrust (buoyancy/drag) due to air on the smaller volume is less than that on the larger volume.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE SIMULATION 1: PLANETARY FREE-FALL & g-G LAB -->
+      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden">
+        <div class="bg-slate-800/80 px-6 py-4 border-b border-slate-700 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-cyan-400 animate-ping"></span>
+            <h3 class="text-lg sm:text-xl font-bold text-white">
+              Interactive Simulation 1: Relation Between $g$ and $G$ & Free-Fall Lab
+            </h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="setPlanetPreset('earth')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 transition">Earth</button>
+            <button onclick="setPlanetPreset('moon')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-700 text-slate-200 hover:bg-slate-600 transition">Moon (Sample Problem)</button>
+            <button onclick="setPlanetPreset('mars')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-orange-500/20 text-orange-300 border border-orange-500/40 hover:bg-orange-500/30 transition">Mars</button>
+            <button onclick="setPlanetPreset('jupiter')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition">Jupiter</button>
+          </div>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Simulation Canvas (Left 7 cols) -->
+          <div class="lg:col-span-7 flex flex-col items-center">
+            <div class="relative w-full bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner">
+              <canvas id="sim1Canvas" width="680" height="420" class="w-full h-auto block"></canvas>
+            </div>
+            <div class="w-full flex flex-wrap items-center justify-between gap-3 mt-4">
+              <div class="flex items-center gap-2">
+                <button id="sim1DropBtn" onclick="startSim1Drop()" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg hover:opacity-95 transition flex items-center gap-2">
+                  <span>▶ Release Both Bodies from $h = 20\text{ m}$</span>
+                </button>
+                <button onclick="resetSim1Drop()" class="px-4 py-2.5 rounded-xl font-bold text-sm bg-slate-800 text-slate-300 hover:bg-slate-700 border border-slate-700 transition">
+                  ↺ Reset
+                </button>
+              </div>
+              <div class="flex items-center gap-2 bg-slate-800/90 p-1.5 rounded-xl border border-slate-700">
+                <button id="btnVacuum" onclick="setSim1Medium('vacuum')" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-500 text-slate-950 transition">Vacuum</button>
+                <button id="btnAir" onclick="setSim1Medium('air')" class="px-3 py-1.5 rounded-lg text-xs font-bold text-slate-300 hover:text-white transition">Air Medium</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls & Live Readout (Right 5 cols) -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                  <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Selected Body</span>
+                  <h4 id="sim1PlanetName" class="text-lg font-extrabold text-cyan-400">Earth</h4>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs uppercase tracking-wider text-slate-400 font-bold">Calculated $g = \frac{GM}{R^2}$</span>
+                  <div id="sim1GVal" class="text-2xl font-black text-emerald-400 mono">9.80 m/s²</div>
+                </div>
+              </div>
+
+              <!-- Sliders -->
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span class="text-slate-300">Planet Mass ($M$):</span>
+                  <span id="sim1MassLabel" class="text-cyan-300 mono">5.97 × 10²⁴ kg (1.00 M⊕)</span>
+                </div>
+                <input id="sim1MassSlider" type="range" min="0.01" max="5" step="0.01" value="1.00" oninput="updateSim1Custom()" class="w-full" />
+              </div>
+
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1">
+                  <span class="text-slate-300">Planet Radius ($R$):</span>
+                  <span id="sim1RadiusLabel" class="text-cyan-300 mono">6.38 × 10⁶ m (1.00 R⊕)</span>
+                </div>
+                <input id="sim1RadiusSlider" type="range" min="0.25" max="2.5" step="0.01" value="1.00" oninput="updateSim1Custom()" class="w-full" />
+              </div>
+
+              <div class="grid grid-cols-2 gap-3 pt-1">
+                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Small Compact Sphere ($m_1$)</div>
+                  <div class="text-sm font-bold text-white mt-0.5">Mass $m_1 = 2\text{ kg}$</div>
+                  <div id="sim1Weight1" class="text-xs text-cyan-300 mono mt-1">Weight $F_1 = 19.6\text{ N}$</div>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900 border border-slate-800">
+                  <div class="text-[11px] font-bold text-slate-400 uppercase">Large Hollow Sphere ($m_2$)</div>
+                  <div class="text-sm font-bold text-white mt-0.5">Mass $m_2 = 2\text{ kg}$ (Large Vol)</div>
+                  <div id="sim1Weight2" class="text-xs text-pink-300 mono mt-1">Weight $F_2 = 19.6\text{ N}$</div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-indigo-950/50 border border-indigo-500/30 text-xs text-indigo-200 leading-relaxed">
+                <strong>Observation:</strong> Notice how changing the mass of the falling object does <em>not</em> change its acceleration $g = \frac{GM}{R^2}$ because test mass $m$ cancels out in $mg = \frac{GMm}{R^2}$!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP-BY-STEP DERIVATION & DIAGRAM (SECTION 8.18) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Textbook Diagram Fig 8.9 + Mean Density Relation (4 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl flex flex-col items-center">
+            <div class="w-full flex items-center justify-between mb-3">
+              <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">Reference Figure 8.9</span>
+              <span class="text-xs text-slate-400">Body on Earth's Surface</span>
+            </div>
+            <!-- SVG Textbook Diagram Fig 8.9 -->
+            <svg viewBox="0 0 320 260" class="w-full max-w-xs">
+              <defs>
+                <radialGradient id="earthGrad1" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#1e3a8a" />
+                  <stop offset="100%" stop-color="#0f172a" />
+                </radialGradient>
+                <marker id="arrowCyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8" />
+                </marker>
+                <marker id="arrowPink" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 1 L 10 5 L 0 9 z" fill="#f472b6" />
+                </marker>
+              </defs>
+              <!-- Earth Sphere -->
+              <circle cx="145" cy="145" r="85" fill="url(#earthGrad1)" stroke="#38bdf8" stroke-width="2.5" />
+              <!-- Centre O -->
+              <circle cx="145" cy="145" r="4" fill="#f8fafc" />
+              <text x="128" y="162" fill="#f8fafc" font-size="14" font-weight="bold">O</text>
+              <text x="135" y="182" fill="#94a3b8" font-size="13" font-weight="bold">Mass = M</text>
+              <!-- Dashed line from surface to O -->
+              <line x1="145" y1="60" x2="145" y2="145" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" />
+              <!-- Force vector mg downwards towards O -->
+              <line x1="145" y1="60" x2="145" y2="112" stroke="#f472b6" stroke-width="3" marker-end="url(#arrowPink)" />
+              <text x="153" y="102" fill="#f472b6" font-size="14" font-weight="bold" font-style="italic">mg</text>
+              <!-- Body of mass m at top surface -->
+              <circle cx="145" cy="54" r="7" fill="#fbbf24" stroke="#fff" stroke-width="1.5" />
+              <text x="140" y="38" fill="#fbbf24" font-size="14" font-weight="bold" font-style="italic">m</text>
+              <!-- Radius dimension R on right -->
+              <line x1="238" y1="60" x2="262" y2="60" stroke="#64748b" stroke-width="1.5" />
+              <line x1="238" y1="145" x2="262" y2="145" stroke="#64748b" stroke-width="1.5" />
+              <line x1="250" y1="64" x2="250" y2="141" stroke="#38bdf8" stroke-width="1.8" marker-start="url(#arrowCyan)" marker-end="url(#arrowCyan)" />
+              <text x="260" y="108" fill="#38bdf8" font-size="15" font-weight="bold">R</text>
+            </svg>
+            <p class="text-xs text-slate-400 text-center mt-2">
+              A body of mass $m$ placed on the surface of spherical Earth of mass $M$ and radius $R$ experiences gravitational pull $F = mg$ towards centre $O$.
+            </p>
+          </div>
+
+          <!-- Sample Problem from Textbook Image 1 -->
+          <div class="bg-gradient-to-br from-emerald-950/50 to-slate-900 rounded-3xl p-6 border border-emerald-500/30 shadow-xl space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">
+              Textbook Sample Problem
+            </div>
+            <h4 class="text-base font-bold text-white">
+              The radius of the moon is $1.7 \times 10^6\text{ m}$ and its mass is $7.4 \times 10^{22}\text{ kg}$. If $G = 6.67 \times 10^{-11}\text{ N m}^2\text{ kg}^{-2}$, find the value of acceleration due to gravity on the surface of moon.
+            </h4>
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 text-sm space-y-2 text-slate-200">
+              <div><strong>Given:</strong> $R_m = 1.7 \times 10^6\text{ m}$, $M_m = 7.4 \times 10^{22}\text{ kg}$, $G = 6.67 \times 10^{-11}\text{ N m}^2\text{ kg}^{-2}$</div>
+              <div><strong>Formula:</strong> $$g_m = \frac{G M_m}{R_m^2}$$</div>
+              <div><strong>Substitution:</strong> $$g_m = \frac{6.67 \times 10^{-11} \times 7.4 \times 10^{22}}{(1.7 \times 10^6)^2} = \frac{49.358 \times 10^{11}}{2.89 \times 10^{12}} \approx 1.71\text{ m s}^{-2}$$</div>
+              <div class="text-emerald-400 font-bold pt-1">Note: $g_{\text{moon}} \approx \frac{1}{6} g_{\text{earth}}$.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step-by-Step Derivation (7 cols) -->
+        <div class="lg:col-span-7 bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-5">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Section 8.18 • Step-by-Step Derivation</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-1">
+              Relation Between $g$ and $G$
+            </h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-cyan-400 uppercase mb-1">Step 1: Consider the Earth-Body System</div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Consider the Earth to be a spherical body of mass $M$ and radius $R$ with centre $O$. Suppose a body of mass $m$ is placed on the surface of the Earth (Fig. 8.9), where acceleration due to gravity is $g$. The entire mass $M$ of the Earth can be considered concentrated at its centre $O$.
+              </p>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-cyan-400 uppercase mb-1">Step 2: Apply Newton's Universal Law of Gravitation</div>
+              <p class="text-sm text-slate-300">
+                Let $F$ be the gravitational force of attraction between the body of mass $m$ and the Earth of mass $M$ separated by distance $R$:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$F = \frac{G M m}{R^2}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-cyan-400 uppercase mb-1">Step 3: Apply Newton's Second Law (Gravity Pull / Weight)</div>
+              <p class="text-sm text-slate-300">
+                By definition, the gravitational pull on the body produces acceleration due to gravity $g$, which equals the weight of the body:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$F = m g$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-pink-400 uppercase mb-1">Step 4: Equate Both Expressions for Force $F$</div>
+              <p class="text-sm text-slate-300">
+                Equating the two expressions for $F$, we get:
+              </p>
+              <div class="p-3 text-center">
+                $$m g = \frac{G M m}{R^2}$$
+              </div>
+              <div class="formula-highlight p-4 rounded-2xl text-center">
+                <div class="text-xs uppercase tracking-widest text-pink-300 font-bold mb-1">Fundamental Relation (Equation 11)</div>
+                $$g = \frac{G M}{R^2}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-amber-400 uppercase mb-1">Step 5: Relation in Terms of Uniform Density ($\rho$) of Earth</div>
+              <p class="text-sm text-slate-300">
+                If $\rho$ is the uniform (average) density of the material of the Earth, then Mass $=$ Volume $\times$ Density:
+                $$M = \frac{4}{3}\pi R^3 \rho$$
+                Substituting $M$ in $g = \frac{GM}{R^2}$:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$g = \frac{G \times \frac{4}{3}\pi R^3 \rho}{R^2} \implies \mathbf{g = \frac{4}{3}\pi G R \rho}$$
+              </div>
+              <p class="text-xs text-slate-400 mt-2">
+                Using $g = 9.8\text{ m s}^{-2}$, $R = 6.4 \times 10^6\text{ m}$, and $G = 6.67 \times 10^{-11}\text{ N m}^2\text{ kg}^{-2}$, average density of Earth is $\rho \approx 5.5 \times 10^3\text{ kg m}^{-3}$.
+              </p>
+            </div>
+          </div>
+
+          <!-- Important Note Box -->
+          <div class="p-4 rounded-2xl bg-indigo-950/60 border border-indigo-400/40 flex items-start gap-3">
+            <span class="text-xl">💡</span>
+            <div class="text-xs sm:text-sm text-indigo-100 space-y-1">
+              <div class="font-bold text-indigo-300 uppercase tracking-wider">Important Note (From Eq. 11)</div>
+              <p>
+                From $g = \frac{GM}{R^2}$, we note that the value of acceleration due to gravity $g$ is <strong>completely independent of the mass ($m$), shape, and size of the falling body</strong>, but depends upon the mass ($M$) and radius ($R$) of the planet/heavenly body. Hence, the value of $g$ on different heavenly bodies is different.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section Nav -->
+      <div class="flex justify-end pt-4">
+        <button onclick="switchTab(1)" class="px-6 py-3 rounded-2xl font-bold bg-gradient-to-r from-emerald-500 to-teal-600 text-slate-950 shadow-lg hover:opacity-95 transition flex items-center gap-2">
+          <span>Next Topic: Variation of $g$ with Altitude ($h$)</span>
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 2: VARIATION OF g WITH ALTITUDE (HEIGHT h)
+         ===================================================================== -->
+    <section id="tab-1" class="tab-section hidden space-y-8">
+      <!-- Intro Banner -->
+      <div class="bg-gradient-to-br from-slate-900 via-emerald-950/50 to-slate-900 rounded-3xl p-6 sm:p-8 border border-emerald-500/30 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-3">
+          Section 8.20 (a) • Effect of Altitude
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Variation of Acceleration Due to Gravity ($g$) with Altitude (Height $h$)
+        </h2>
+        <p class="text-slate-300 mt-2 max-w-4xl leading-relaxed">
+          As we move upwards above the surface of the Earth to a height $h$, our distance from the centre $O$ of the Earth increases from $R$ to $(R + h)$. Consequently, the force of gravity and the value of acceleration due to gravity <strong>decrease with altitude</strong>. It is due to this reason that the value of $g$ is lesser at mountains than in plains!
+        </p>
+      </div>
+
+      <!-- INTERACTIVE SIMULATION 2: ALTITUDE LAB & BINOMIAL VS EXACT COMPARISON -->
+      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden">
+        <div class="bg-slate-800/80 px-6 py-4 border-b border-slate-700 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-ping"></span>
+            <h3 class="text-lg sm:text-xl font-bold text-white">
+              Interactive Simulation 2: Altitude Explorer ($g'$ vs Height $h$)
+            </h3>
+          </div>
+          <!-- Quick Altitude Presets -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="setAltitudePreset(0)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-700 text-slate-200 hover:bg-slate-600 transition">Surface ($h=0$)</button>
+            <button onclick="setAltitudePreset(100)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition">Kármán Line ($100\text{ km}$)</button>
+            <button onclick="setAltitudePreset(400)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 transition">ISS Orbit ($400\text{ km}$)</button>
+            <button onclick="setAltitudePreset(3200)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition">$h = R/2$ ($3200\text{ km}$)</button>
+            <button onclick="setAltitudePreset(6400)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40 hover:bg-pink-500/30 transition">$h = R$ ($6400\text{ km}$)</button>
+            <button onclick="setAltitudePreset(12800)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-purple-500/20 text-purple-300 border border-purple-500/40 hover:bg-purple-500/30 transition">$h = 2R$ ($12800\text{ km}$)</button>
+          </div>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Left Canvas: Visual Earth + Rocket + Live Graph Fig 8.10(a) & (b) -->
+          <div class="lg:col-span-7">
+            <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner">
+              <canvas id="sim2Canvas" width="680" height="420" class="w-full h-auto block"></canvas>
+            </div>
+          </div>
+
+          <!-- Right Controls & Live Equations Comparison -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800 space-y-4">
+              <div>
+                <div class="flex justify-between items-center mb-1.5">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Adjust Altitude $h$ above Surface:</span>
+                  <span id="sim2HLabel" class="text-base font-extrabold text-emerald-400 mono">1600 km (0.25 R)</span>
+                </div>
+                <input id="sim2HSlider" type="range" min="0" max="12800" step="20" value="1600" oninput="updateSim2()" class="w-full" />
+                <div class="flex justify-between text-[11px] text-slate-500 mono mt-1">
+                  <span>0 km (Surface)</span>
+                  <span>R = 6400 km</span>
+                  <span>2R = 12800 km</span>
+                </div>
+              </div>
+
+              <!-- Exact vs Binomial Cards -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/40">
+                  <div class="text-[11px] font-bold uppercase text-emerald-300">Exact Formula (Eq. 17)</div>
+                  <div class="text-xs text-slate-400 mt-0.5">$g' = g \left(\frac{R}{R+h}\right)^2$</div>
+                  <div id="sim2ExactVal" class="text-xl font-black text-emerald-400 mono mt-1">6.27 m/s²</div>
+                  <div id="sim2ExactRatio" class="text-xs text-emerald-200 mono">64.0% of surface $g$</div>
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/40">
+                  <div class="text-[11px] font-bold uppercase text-amber-300">Binomial Approx (Eq. 18)</div>
+                  <div class="text-xs text-slate-400 mt-0.5">$g' \approx g \left(1 - \frac{2h}{R}\right)$</div>
+                  <div id="sim2ApproxVal" class="text-xl font-black text-amber-400 mono mt-1">4.90 m/s²</div>
+                  <div id="sim2ApproxNotice" class="text-xs text-amber-200">Valid only for $h \ll R$!</div>
+                </div>
+              </div>
+
+              <!-- Telemetry Stats -->
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Distance from Earth's Centre ($r = R + h$):</span>
+                  <span id="sim2DistCenter" class="font-bold text-white mono">8000 km (1.25 R)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Decrease in Gravity ($\Delta g = g - g'$):</span>
+                  <span id="sim2DeltaG" class="font-bold text-pink-400 mono">3.53 m/s²</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Percentage Decrease ($\frac{g - g'}{g} \times 100$):</span>
+                  <span id="sim2PercentDec" class="font-bold text-cyan-300 mono">36.00%</span>
+                </div>
+              </div>
+
+              <div id="sim2CoachingTip" class="p-3.5 rounded-xl bg-indigo-950/60 border border-indigo-500/30 text-xs text-indigo-200 leading-relaxed">
+                <strong>Teacher's Tip:</strong> Try setting $h = 6400\text{ km}$ ($h = R$). Using Exact Eq. (17), $g' = g/4 = 2.45\text{ m/s}^2$. If you mistakenly used Eq. (18), you would get $g(1 - 2) = -g$, which is physically impossible!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP-BY-STEP DERIVATION: ALTITUDE (SECTION 8.20a) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Detailed Step-by-Step Derivation (7 cols) -->
+        <div class="lg:col-span-7 bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-5">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Section 8.20 (a) • Complete Textbook Derivation</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-1">
+              Step-by-Step Derivation: Effect of Altitude ($h$)
+            </h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Step 1: Acceleration Due to Gravity on Surface (Point $A$)</div>
+              <p class="text-sm text-slate-300">
+                Consider the Earth to be a sphere of mass $M$, radius $R$ with centre at $O$. Let $g$ be the value of acceleration due to gravity at a point $A$ on the surface of the Earth (Fig. 8.10a):
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$g = \frac{G M}{R^2} \qquad \text{...(15)}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Step 2: Acceleration Due to Gravity at Height $h$ (Point $B$)</div>
+              <p class="text-sm text-slate-300">
+                If $g'$ is the acceleration due to gravity at a point $B$ at a height $h$ above the surface of the Earth, then the distance of point $B$ from the centre $O$ is $(R + h)$. Since the Earth's mass $M$ is concentrated at $O$:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$g' = \frac{G M}{(R + h)^2} \qquad \text{...(16)}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-emerald-400 uppercase mb-1">Step 3: Divide Equation (16) by Equation (15)</div>
+              <p class="text-sm text-slate-300">
+                Dividing (16) by (15), we obtain the general relation valid for <strong>all heights $h$</strong>:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$\frac{g'}{g} = \frac{G M}{(R + h)^2} \times \frac{R^2}{G M} = \frac{R^2}{(R + h)^2} \qquad \text{...(17)}$$
+              </div>
+              <p class="text-sm text-slate-300 mt-2">
+                Taking $R^2$ common from the denominator:
+              </p>
+              <div class="p-2 text-center">
+                $$\frac{g'}{g} = \frac{R^2}{R^2\left(1 + \frac{h}{R}\right)^2} = \left(1 + \frac{h}{R}\right)^{-2}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-pink-400 uppercase mb-1">Step 4: Binomial Approximation when $h \ll R$</div>
+              <p class="text-sm text-slate-300">
+                If $h \ll R$, then $\frac{h}{R}$ is very small as compared to $1$. Expanding the R.H.S. of the above equation by the <strong>Binomial Theorem</strong> $(1 + x)^n = 1 + nx + \frac{n(n-1)}{2!}x^2 + \dots$ and neglecting the square and higher powers of $\frac{h}{R}$, we get:
+              </p>
+              <div class="p-2 text-center">
+                $$\frac{g'}{g} \approx 1 - \frac{2h}{R}$$
+              </div>
+              <div class="formula-highlight p-4 rounded-2xl text-center">
+                <div class="text-xs uppercase tracking-widest text-pink-300 font-bold mb-1">Altitude Formula for $h \ll R$ (Equation 18)</div>
+                $$g' = g\left(1 - \frac{2h}{R}\right) \qquad \text{...(18)}$$
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Important Notes & Sample Problem (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase">
+              Important Notes (From Reference Book)
+            </div>
+            <ul class="space-y-3 text-sm text-slate-300">
+              <li class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+                <strong class="text-cyan-400">(i) When to use Eq. (17) vs Eq. (18):</strong><br/>
+                Relation (17) $g' = \frac{g R^2}{(R+h)^2}$ is used when $h$ is comparable to $R$ (e.g., $h > 500\text{ km}$). Relation (18) $g' = g\left(1 - \frac{2h}{R}\right)$ is used only when $h \ll R$ (e.g., $h = 10\text{ km}$ or $50\text{ km}$).
+              </li>
+              <li class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+                <strong class="text-emerald-400">(ii) At $h = R = 6400\text{ km}$:</strong><br/>
+                From (17), $g' = \frac{g R^2}{(R + R)^2} = \frac{g}{4}$.
+              </li>
+              <li class="p-3 rounded-xl bg-slate-950/80 border border-slate-800 space-y-1.5">
+                <strong class="text-pink-400">(iii) Decrease, Fractional & Percentage Decrease ($h \ll R$):</strong>
+                <div>• Decrease in value of $g$: $$\Delta g = g - g' = \frac{2 h g}{R}$$</div>
+                <div>• Fractional decrease in $g$: $$\frac{g - g'}{g} = \frac{2h}{R}$$</div>
+                <div>• % decrease in value of $g$: $$\left(\frac{g - g'}{g}\right) \times 100 = \frac{2h}{R} \times 100\%$$</div>
+              </li>
+              <li class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+                <strong class="text-purple-400">(iv) Inverse Square Variation Outside Earth:</strong><br/>
+                If $(R + h) = r$, then from (16), $g' = \frac{GM}{r^2}$ or $g' \propto \frac{1}{r^2}$. Thus the variation of $g'$ with $r$ is a rectangular hyperbola curve (Fig. 8.10b).
+              </li>
+            </ul>
+          </div>
+
+          <!-- Textbook Sample Problem from Image 3 -->
+          <div class="bg-gradient-to-br from-cyan-950/50 to-slate-900 rounded-3xl p-6 border border-cyan-500/30 shadow-xl space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold uppercase">
+              Textbook Sample Problem
+            </div>
+            <h4 class="text-sm sm:text-base font-bold text-white">
+              How much above the surface of earth does the acceleration due to gravity reduce by $64\%$ of its value on the surface of earth? Radius of earth $= 6400\text{ km}$.
+            </h4>
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800 text-xs sm:text-sm space-y-2 text-slate-200">
+              <div><strong>Solution:</strong> Since acceleration due to gravity reduces <em>by</em> $64\%$, the remaining value of $g'$ there is $100\% - 64\% = 36\%$ of $g$:
+                $$g' = \frac{36}{100}g$$
+              </div>
+              <div>Since the change is large, we MUST use Exact Equation (17):
+                $$g' = g \frac{R^2}{(R+h)^2} \implies \frac{36}{100}g = g\frac{R^2}{(R+h)^2}$$
+              </div>
+              <div>Taking square root on both sides:
+                $$\frac{6}{10} = \frac{R}{R+h} \implies 6R + 6h = 10R \implies 6h = 4R$$
+                $$h = \frac{2}{3}R = \frac{2 \times 6.4 \times 10^6}{3} = \mathbf{4.27 \times 10^6\text{ m}} \text{ (or } 4267\text{ km)}$$
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section Nav -->
+      <div class="flex justify-between pt-4">
+        <button onclick="switchTab(0)" class="px-5 py-3 rounded-2xl font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+          ← Previous: Relation Between $g$ & $G$
+        </button>
+        <button onclick="switchTab(2)" class="px-6 py-3 rounded-2xl font-bold bg-gradient-to-r from-amber-500 to-orange-600 text-slate-950 shadow-lg hover:opacity-95 transition">
+          Next Topic: Variation of $g$ with Depth ($d$) →
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 3: VARIATION OF g WITH DEPTH (d)
+         ===================================================================== -->
+    <section id="tab-2" class="tab-section hidden space-y-8">
+      <!-- Intro Banner -->
+      <div class="bg-gradient-to-br from-slate-900 via-amber-950/50 to-slate-900 rounded-3xl p-6 sm:p-8 border border-amber-500/30 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/15 border border-amber-400/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
+          Section 8.20 (b) • Effect of Depth
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Variation of Acceleration Due to Gravity ($g$) with Depth ($d$)
+        </h2>
+        <p class="text-slate-300 mt-2 max-w-4xl leading-relaxed">
+          What happens when we go inside a deep mine or tunnel below the surface of the Earth to a depth $d$? Even though we get closer to the Earth's centre, the effective mass of the Earth attracting us decreases from $M$ to $M'$ (only the inner sphere of radius $R - d$ exerts a net downward pull, while the outer spherical shell of thickness $d$ exerts zero net force!). As a result, $g$ <strong>decreases linearly with depth</strong> and becomes <strong>zero at the centre of the Earth</strong>.
+        </p>
+      </div>
+
+      <!-- INTERACTIVE SIMULATION 3: DEEP EARTH TUNNEL & UNIFIED g vs r GRAPH -->
+      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden">
+        <div class="bg-slate-800/80 px-6 py-4 border-b border-slate-700 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-amber-400 animate-ping"></span>
+            <h3 class="text-lg sm:text-xl font-bold text-white">
+              Interactive Simulation 3: Deep Earth Tunnel Lab & Combined $g$ vs $r$ Graph
+            </h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="setDepthPreset(0)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-slate-700 text-slate-200 hover:bg-slate-600 transition">Surface ($d=0$)</button>
+            <button onclick="setDepthPreset(32)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 transition">$d = 32\text{ km}$ (Textbook Ex)</button>
+            <button onclick="setDepthPreset(1600)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition">$d = R/4$ ($1600\text{ km}$)</button>
+            <button onclick="setDepthPreset(3200)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition">$d = R/2$ ($3200\text{ km}$)</button>
+            <button onclick="setDepthPreset(6400)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40 hover:bg-pink-500/30 transition">Centre of Earth ($d = R$)</button>
+          </div>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Left Canvas: Cross-Section of Earth (Fig 8.11a) + Graph (Fig 8.11b) -->
+          <div class="lg:col-span-7">
+            <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner">
+              <canvas id="sim3Canvas" width="680" height="420" class="w-full h-auto block"></canvas>
+            </div>
+          </div>
+
+          <!-- Right Controls & Telemetry -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800 space-y-4">
+              <div>
+                <div class="flex justify-between items-center mb-1.5">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Depth $d$ Below Earth's Surface:</span>
+                  <span id="sim3DLabel" class="text-base font-extrabold text-amber-400 mono">1600 km (0.25 R)</span>
+                </div>
+                <input id="sim3DSlider" type="range" min="0" max="6400" step="16" value="1600" oninput="updateSim3()" class="w-full" />
+                <div class="flex justify-between text-[11px] text-slate-500 mono mt-1">
+                  <span>d = 0 (Surface)</span>
+                  <span>d = 3200 km (R/2)</span>
+                  <span>d = 6400 km (Centre O)</span>
+                </div>
+              </div>
+
+              <!-- Highlight Readout Cards -->
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/40">
+                  <div class="text-[11px] font-bold uppercase text-amber-300">Gravity at Depth $d$</div>
+                  <div class="text-xs text-slate-400 mt-0.5">$g' = g\left(1 - \frac{d}{R}\right)$</div>
+                  <div id="sim3GPrimeVal" class="text-2xl font-black text-amber-400 mono mt-1">7.35 m/s²</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-cyan-950/40 border border-cyan-500/40">
+                  <div class="text-[11px] font-bold uppercase text-cyan-300">Inner Sphere Radius</div>
+                  <div class="text-xs text-slate-400 mt-0.5">$r = R - d$</div>
+                  <div id="sim3InnerRVal" class="text-2xl font-black text-cyan-400 mono mt-1">4800 km</div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Active Inner Mass Fraction ($M'/M = (1 - d/R)^3$):</span>
+                  <span id="sim3MassFrac" class="font-bold text-emerald-400 mono">42.19% of M</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Fractional Decrease ($\frac{g - g'}{g} = \frac{d}{R}$):</span>
+                  <span id="sim3FracDec" class="font-bold text-white mono">0.250</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">% Decrease in Weight ($\frac{d}{R} \times 100$):</span>
+                  <span id="sim3PctDec" class="font-bold text-pink-400 mono">25.00%</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Weight of a $60\text{ kg}$ Person ($W = mg'$):</span>
+                  <span id="sim3Weight60" class="font-bold text-amber-300 mono">441.0 N (Mass = 60 kg)</span>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-indigo-950/60 border border-indigo-500/30 text-xs text-indigo-200 leading-relaxed">
+                <strong>Shell Theorem Insight:</strong> The shaded outer shell of thickness $d$ exerts <strong>zero net gravitational force</strong> on the body at $B$. Only the glowing inner sphere of radius $(R - d)$ pulls the body towards $O$!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP-BY-STEP DERIVATION: DEPTH (SECTION 8.20b) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Detailed Derivation (7 cols) -->
+        <div class="lg:col-span-7 bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-5">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Section 8.20 (b) • Complete Textbook Derivation</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-1">
+              Step-by-Step Derivation: Effect of Depth ($d$)
+            </h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-amber-400 uppercase mb-1">Step 1: Express Surface Gravity $g$ in Terms of Density $\rho$</div>
+              <p class="text-sm text-slate-300">
+                Consider the Earth to be a homogeneous sphere of radius $R$ and mass $M$ with centre at $O$. Let $g$ be the value of acceleration due to gravity at a point $A$ on the surface of the Earth (Fig. 8.11a). Then $g = \frac{GM}{R^2}$.<br/>
+                If $\rho$ is the uniform density of material of the Earth, then $M = \frac{4}{3}\pi R^3 \rho$.
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$g = \frac{G \times \frac{4}{3}\pi R^3 \rho}{R^2} = \frac{4}{3}\pi G R \rho \qquad \text{...(19)}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-amber-400 uppercase mb-1">Step 2: Divide Earth into Inner Sphere & Outer Shell at Depth $d$</div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Let $g'$ be the acceleration due to gravity at point $B$ at a depth $d$ below the surface of the Earth. The distance of point $B$ from the centre $O$ is $(R - d)$. The Earth can be supposed to be made of:
+              </p>
+              <ul class="list-disc list-inside text-sm text-slate-300 mt-1 space-y-1">
+                <li><strong>(i)</strong> A smaller inner sphere of radius $(R - d)$, and</li>
+                <li><strong>(ii)</strong> A spherical shell of thickness $d$.</li>
+              </ul>
+              <p class="text-sm text-slate-300 mt-2">
+                The body at $B$ is inside the spherical shell of thickness $d$, so the force on the body due to this outer spherical shell is <strong>zero</strong>. The body at $B$ is on the surface of the smaller sphere of radius $(R - d)$, so the force is just as if the entire mass $M'$ of the smaller sphere is concentrated at the centre $O$.
+              </p>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-amber-400 uppercase mb-1">Step 3: Express $g'$ at Depth $d$ in Terms of Density $\rho$</div>
+              <p class="text-sm text-slate-300">
+                Since $g' = \frac{G M'}{(R - d)^2}$ and the mass of the inner sphere is $M' = \frac{4}{3}\pi (R - d)^3 \rho$:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$g' = \frac{G \times \frac{4}{3}\pi (R - d)^3 \rho}{(R - d)^2} = \frac{4}{3}\pi G (R - d)\rho \qquad \text{...(20)}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-pink-400 uppercase mb-1">Step 4: Divide Equation (20) by Equation (19)</div>
+              <p class="text-sm text-slate-300">
+                Dividing (20) by (19), we get:
+              </p>
+              <div class="p-2 text-center">
+                $$\frac{g'}{g} = \frac{\frac{4}{3}\pi G (R - d)\rho}{\frac{4}{3}\pi G R \rho} = \frac{R - d}{R} = 1 - \frac{d}{R}$$
+              </div>
+              <div class="formula-highlight p-4 rounded-2xl text-center">
+                <div class="text-xs uppercase tracking-widest text-pink-300 font-bold mb-1">Exact Depth Formula (Equation 21)</div>
+                $$g' = g\left(1 - \frac{d}{R}\right) \qquad \text{...(21)}$$
+              </div>
+              <p class="text-xs text-slate-400 mt-2 text-center">
+                Note: Unlike the altitude approximation, $g' = g(1 - d/R)$ is an <strong>exact equation</strong> for all depths $d \le R$ (assuming uniform density).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Centre of Earth, Important Notes & Unified Graph Summary (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-xs font-bold uppercase">
+              Special Case: At the Centre of the Earth
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              At the centre of the Earth, depth $d = R$, and let $g' = g_0$. Substituting $d = R$ in Equation (21):
+            </p>
+            <div class="formula-box p-3 rounded-xl text-center">
+              $$g_0 = g\left(1 - \frac{R}{R}\right) = 0 \qquad \text{...(22)}$$
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Therefore, the <strong>weight of a body of mass $m$ at the centre of the Earth is $m g_0 = 0$</strong>, but the <strong>mass $m$ of the body will NOT be zero</strong>. Thus, the value of $g$ is maximum at the Earth's surface and becomes zero at the centre of the Earth.
+            </p>
+          </div>
+
+          <!-- Important Notes Box (Eq 23, 24 & r-dependence) -->
+          <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase">
+              Important Notes & Unified $r$-Relation
+            </div>
+            <div class="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800">
+                • <strong>Decrease in value of $g$ with depth $d$:</strong> $g - g' = \frac{d g}{R}$<br/>
+                • <strong>Fractional decrease (Eq. 23):</strong> $\frac{g - g'}{g} = \frac{d}{R}$<br/>
+                • <strong>Percentage decrease (Eq. 24):</strong> $\frac{g - g'}{g} \times 100 = \frac{d}{R} \times 100\%$
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-indigo-950/50 border border-indigo-500/30 space-y-2">
+                <div class="font-bold text-indigo-300 uppercase text-xs">Variation of $g$ with Distance $r$ from Centre $O$:</div>
+                <div>
+                  1. <strong>Inside the Earth ($r < R$, where $r = R - d$):</strong>
+                  $$g_d = g\left(\frac{R - d}{R}\right) = \frac{g r}{R} \implies \mathbf{g_d \propto r}$$
+                  (Straight line passing through origin $O$)
+                </div>
+                <div>
+                  2. <strong>Outside the Earth ($r > R$, where $r = R + h$):</strong>
+                  $$g_h = \frac{g R^2}{(R + h)^2} = \frac{g R^2}{r^2} \implies \mathbf{g_h \propto \frac{1}{r^2}}$$
+                  (Inverse-square curve decreasing towards $\infty$)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section Nav -->
+      <div class="flex justify-between pt-4">
+        <button onclick="switchTab(1)" class="px-5 py-3 rounded-2xl font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+          ← Previous: Variation with Altitude ($h$)
+        </button>
+        <button onclick="switchTab(3)" class="px-6 py-3 rounded-2xl font-bold bg-gradient-to-r from-purple-500 to-indigo-600 text-white shadow-lg hover:opacity-95 transition">
+          Next Topic: Variation with Shape of Earth →
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 4: VARIATION OF g WITH SHAPE OF EARTH
+         ===================================================================== -->
+    <section id="tab-3" class="tab-section hidden space-y-8">
+      <!-- Intro Banner -->
+      <div class="bg-gradient-to-br from-slate-900 via-purple-950/50 to-slate-900 rounded-3xl p-6 sm:p-8 border border-purple-500/30 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/15 border border-purple-400/30 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">
+          Section 8.20 (c) • Effect of Shape of Earth
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Variation of Acceleration Due to Gravity ($g$) with Shape of Earth
+        </h2>
+        <p class="text-slate-300 mt-2 max-w-4xl leading-relaxed">
+          Earth is not a perfect sphere! It is an <strong>oblate spheroid</strong>—flattened at the poles and bulging out at the equator. Because the equatorial radius $R_e$ is about $21\text{ km}$ greater than the polar radius $R_p$, and $g \propto \frac{1}{R^2}$, the value of acceleration due to gravity is <strong>least at the equator and maximum at the poles</strong>.
+        </p>
+      </div>
+
+      <!-- INTERACTIVE SIMULATION 4: OBLATE SPHEROID & LATITUDE GRAVITY EXPLORER -->
+      <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden">
+        <div class="bg-slate-800/80 px-6 py-4 border-b border-slate-700 flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="w-3 h-3 rounded-full bg-purple-400 animate-ping"></span>
+            <h3 class="text-lg sm:text-xl font-bold text-white">
+              Interactive Simulation 4: Oblate Spheroid Explorer (Equator to Pole)
+            </h3>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="setLatitudePreset(0)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-pink-500/20 text-pink-300 border border-pink-500/40 hover:bg-pink-500/30 transition">Equator ($\lambda = 0^\circ$)</button>
+            <button onclick="setLatitudePreset(10)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition">Kerala ($\lambda \approx 10^\circ\text{ N}$)</button>
+            <button onclick="setLatitudePreset(45)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/40 hover:bg-amber-500/30 transition">Mid-Latitude ($\lambda = 45^\circ$)</button>
+            <button onclick="setLatitudePreset(90)" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-500/30 transition">North Pole ($\lambda = 90^\circ$)</button>
+          </div>
+        </div>
+
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Left Canvas: Oblate Spheroid Fig 8.13 -->
+          <div class="lg:col-span-7">
+            <div class="bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner">
+              <canvas id="sim4Canvas" width="680" height="420" class="w-full h-auto block"></canvas>
+            </div>
+          </div>
+
+          <!-- Right Controls & Telemetry -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="bg-slate-950/90 p-5 rounded-2xl border border-slate-800 space-y-4">
+              <div>
+                <div class="flex justify-between items-center mb-1.5">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Move Traveler from Equator ($0^\circ$) to Pole ($90^\circ$):</span>
+                  <span id="sim4LatLabel" class="text-base font-extrabold text-purple-400 mono">λ = 0° (Equator)</span>
+                </div>
+                <input id="sim4LatSlider" type="range" min="0" max="90" step="1" value="0" oninput="updateSim4()" class="w-full" />
+                <div class="flex justify-between text-[11px] text-slate-500 mono mt-1">
+                  <span>0° (Equator: Re = 6378 km)</span>
+                  <span>45°</span>
+                  <span>90° (Pole: Rp = 6357 km)</span>
+                </div>
+              </div>
+
+              <!-- Visual Bulge Exaggeration Slider -->
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <span class="text-xs font-bold text-slate-400">Visual Bulge Magnification (Diagram Clarity):</span>
+                  <span id="sim4BulgeLabel" class="text-xs font-bold text-cyan-300 mono">15× Exaggerated</span>
+                </div>
+                <input id="sim4BulgeSlider" type="range" min="1" max="25" step="1" value="15" oninput="updateSim4()" class="w-full" />
+              </div>
+
+              <!-- Comparison Cards -->
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3.5 rounded-xl bg-purple-950/40 border border-purple-500/40">
+                  <div class="text-[11px] font-bold uppercase text-purple-300">Local Radius $R(\lambda)$</div>
+                  <div id="sim4RadiusVal" class="text-xl font-black text-white mono mt-1">6378.0 km</div>
+                  <div id="sim4RadiusDiff" class="text-xs text-purple-200 mt-0.5">$R_e - R_p \approx 21\text{ km}$</div>
+                </div>
+                <div class="p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500/40">
+                  <div class="text-[11px] font-bold uppercase text-emerald-300">Gravity $g(\lambda)$ (Shape)</div>
+                  <div id="sim4GVal" class="text-xl font-black text-emerald-400 mono mt-1">9.800 m/s²</div>
+                  <div id="sim4GDiff" class="text-xs text-emerald-200 mt-0.5">+$0.00\text{ cm/s}^2$ vs Equator</div>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Equatorial Radius ($R_e$):</span>
+                  <span class="font-bold text-pink-400 mono">6378 km (Maximum R → Minimum g)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Polar Radius ($R_p$):</span>
+                  <span class="font-bold text-cyan-400 mono">6357 km (Minimum R → Maximum g)</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-slate-400">Increase from Equator to Pole ($g_p - g_e$ due to shape):</span>
+                  <span class="font-bold text-emerald-400 mono">1.80 cm s⁻² (0.018 m s⁻²)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP-BY-STEP EXPLANATION & EQUATIONS (SECTION 8.20c) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-7 bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl space-y-5">
+          <div class="border-b border-slate-800 pb-4">
+            <span class="text-xs font-bold uppercase tracking-wider text-purple-400">Section 8.20 (c) • Textbook Explanation & Equations</span>
+            <h3 class="text-xl sm:text-2xl font-extrabold text-white mt-1">
+              Why Does $g$ Increase from Equator to Pole?
+            </h3>
+          </div>
+
+          <div class="space-y-4">
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-purple-400 uppercase mb-1">1. Oblate Spheroid Geometry of Earth (Fig. 8.13)</div>
+              <p class="text-sm text-slate-300 leading-relaxed">
+                Earth is not a perfect sphere. It is flattened at the poles and bulges out at the equator. The equatorial radius $R_e$ of the Earth is about <strong>$21\text{ km}$ greater</strong> than the polar radius $R_p$:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$R_e > R_p \quad \text{and} \quad R_e - R_p \approx 21\text{ km}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-purple-400 uppercase mb-1">2. Inverse-Square Dependence on Radius</div>
+              <p class="text-sm text-slate-300">
+                We know that acceleration due to gravity on the surface is given by:
+                $$g = \frac{G M}{R^2}$$
+                Since universal gravitational constant $G$ and mass of the Earth $M$ are constants:
+              </p>
+              <div class="formula-box p-3 rounded-xl mt-2 text-center">
+                $$g \propto \frac{1}{R^2}$$
+              </div>
+            </div>
+
+            <div class="step-card p-4 rounded-2xl bg-slate-950/70 border border-slate-800">
+              <div class="text-xs font-bold text-pink-400 uppercase mb-1">3. Comparing Gravity at Poles ($g_p$) and Equator ($g_e$)</div>
+              <p class="text-sm text-slate-300">
+                At the equator, acceleration due to gravity is $g_e = \frac{GM}{R_e^2}$, and at the poles, $g_p = \frac{GM}{R_p^2}$.<br/>
+                Since $R_e > R_p$:
+              </p>
+              <div class="formula-highlight p-4 rounded-2xl text-center mt-2">
+                <div class="text-xs uppercase tracking-widest text-pink-300 font-bold mb-1">Key Conclusion</div>
+                $$g_p > g_e \quad \left(\frac{g_p}{g_e} = \frac{R_e^2}{R_p^2}\right)$$
+              </div>
+              <p class="text-sm text-slate-200 mt-3 leading-relaxed">
+                Thus, we conclude that the value of $g$ is <strong>least at the equator</strong> and <strong>maximum at the pole</strong>. It means <em>the value of acceleration due to gravity increases as we go from the equator to the pole</em>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Numerical Fact & Application Box (5 cols) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold uppercase">
+              Quantitative Fact (From Reference Book)
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-950/80 border border-emerald-500/30 text-center">
+              <div class="text-xs uppercase text-slate-400 font-bold">Difference at Sea Level (Due to Shape)</div>
+              <div class="text-2xl font-black text-emerald-400 mono my-1">
+                $g_p - g_e = 1.80\text{ cm s}^{-2}$
+              </div>
+              <div class="text-xs text-slate-300">($= 0.018\text{ m s}^{-2}$)</div>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              At sea level, the value of $g$ at the pole is greater than its value at the equator by $1.80\text{ cm s}^{-2}$ due to the non-spherical shape of the Earth alone.
+            </p>
+            <div class="p-4 rounded-2xl bg-indigo-950/50 border border-indigo-500/30 text-xs sm:text-sm text-indigo-200 space-y-1.5">
+              <div class="font-bold text-indigo-300"> classic Conceptual Application: Sugar Bought at Equator vs. Poles</div>
+              <p>
+                If a person buys $1\text{ kg}$ of sugar at the equator and weighs it using a <strong>spring balance</strong> at the poles, it will weigh slightly <strong>more</strong> at the poles because $W = mg$ and $g_p > g_e$. (However, a <strong>beam balance</strong> compares masses and will read the same at both places!)
+              </p>
+            </div>
+          </div>
+
+          <!-- Master Summary Comparison Table -->
+          <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-3">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-cyan-400">Quick Revision Master Table</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs border-collapse">
+                <thead>
+                  <tr class="border-b border-slate-700 text-slate-400">
+                    <th class="py-2 pr-2">Factor</th>
+                    <th class="py-2 px-2">Formula</th>
+                    <th class="py-2 pl-2">Effect on $g$</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800 text-slate-200">
+                  <tr>
+                    <td class="py-2.5 pr-2 font-bold text-cyan-300">Surface</td>
+                    <td class="py-2.5 px-2">$g = \frac{GM}{R^2} = \frac{4}{3}\pi GR\rho$</td>
+                    <td class="py-2.5 pl-2">Maximum ($9.8\text{ m/s}^2$)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 pr-2 font-bold text-emerald-300">Altitude ($h$)</td>
+                    <td class="py-2.5 px-2">$g' = \frac{gR^2}{(R+h)^2} \approx g\left(1-\frac{2h}{R}\right)$</td>
+                    <td class="py-2.5 pl-2">Decreases with $h$</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 pr-2 font-bold text-amber-300">Depth ($d$)</td>
+                    <td class="py-2.5 px-2">$g' = g\left(1-\frac{d}{R}\right)$</td>
+                    <td class="py-2.5 pl-2">Decreases ($0$ at centre)</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 pr-2 font-bold text-purple-300">Shape</td>
+                    <td class="py-2.5 px-2">$g \propto \frac{1}{R^2}$ ($R_e > R_p$)</td>
+                    <td class="py-2.5 pl-2">Min at Equator, Max at Pole</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Section Nav -->
+      <div class="flex justify-between pt-4">
+        <button onclick="switchTab(2)" class="px-5 py-3 rounded-2xl font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+          ← Previous: Variation with Depth ($d$)
+        </button>
+        <button onclick="switchTab(4)" class="px-6 py-3 rounded-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 text-white shadow-lg hover:opacity-95 transition">
+          Next: 10 Practice Questions & Solutions →
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 5: 10 PRACTICE QUESTIONS (8 NUMERICAL + 2 ANALYTICAL)
+         ===================================================================== -->
+    <section id="tab-4" class="tab-section hidden space-y-8">
+      <!-- Intro Banner -->
+      <div class="bg-gradient-to-br from-slate-900 via-pink-950/50 to-slate-900 rounded-3xl p-6 sm:p-8 border border-pink-500/30 shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/15 border border-pink-400/30 text-pink-300 text-xs font-bold uppercase tracking-wider mb-2">
+            Class 11 NCERT & Reference Book Workbench
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+            Practice Question Bank (8 Numericals + 2 Analytical Questions)
+          </h2>
+          <p class="text-slate-300 text-sm sm:text-base mt-1">
+            Work out each problem on paper first, then click <strong>"Reveal Step-by-Step Solution"</strong> to verify your method and final answer.
+          </p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button onclick="toggleAllSolutions(true)" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition">
+            Expand All Solutions
+          </button>
+          <button onclick="toggleAllSolutions(false)" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-200 border border-slate-700 hover:bg-slate-700 transition">
+            Collapse All
+          </button>
+        </div>
+      </div>
+
+      <!-- Questions Container populated via JS -->
+      <div id="practiceQuestionsContainer" class="space-y-5"></div>
+
+      <!-- Bottom Section Nav -->
+      <div class="flex justify-between pt-4">
+        <button onclick="switchTab(3)" class="px-5 py-3 rounded-2xl font-bold bg-slate-800 text-slate-300 hover:bg-slate-700 transition">
+          ← Previous: Variation with Shape of Earth
+        </button>
+        <button onclick="switchTab(5)" class="px-6 py-3 rounded-2xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-950 shadow-lg hover:opacity-95 transition">
+          Enter Gamified Quiz Arena (6 MCQs) 🏆 →
+        </button>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         TAB 6: GAMIFIED QUIZ ARENA (6 MCQs)
+         ===================================================================== -->
+    <section id="tab-5" class="tab-section hidden space-y-8">
+      <!-- Gamified Quiz Header -->
+      <div class="bg-gradient-to-br from-slate-900 via-amber-950/40 to-indigo-950/60 rounded-3xl p-6 sm:p-8 border border-amber-500/40 shadow-2xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-wider mb-2">
+              Gamified Mastery Challenge • 6 MCQs
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+              Gravity Master Quiz Arena
+            </h2>
+            <p class="text-slate-300 text-sm mt-1">
+              Test your conceptual clarity and numerical speed! Earn XP and build your streak across 6 syllabus-aligned questions.
+            </p>
+          </div>
+
+          <!-- Scoreboard HUD -->
+          <div class="grid grid-cols-3 gap-3 shrink-0">
+            <div class="bg-slate-950/90 px-4 py-3 rounded-2xl border border-slate-800 text-center">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Score</div>
+              <div id="quizScoreDisplay" class="text-xl sm:text-2xl font-black text-emerald-400 mono">0 / 6</div>
+            </div>
+            <div class="bg-slate-950/90 px-4 py-3 rounded-2xl border border-slate-800 text-center">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Streak 🔥</div>
+              <div id="quizStreakDisplay" class="text-xl sm:text-2xl font-black text-amber-400 mono">0</div>
+            </div>
+            <div class="bg-slate-950/90 px-4 py-3 rounded-2xl border border-slate-800 text-center">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400">XP Points</div>
+              <div id="quizXPDisplay" class="text-xl sm:text-2xl font-black text-cyan-400 mono">0 XP</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="mt-6">
+          <div class="flex justify-between text-xs font-bold text-slate-400 mb-1.5">
+            <span id="quizProgressLabel">Question 1 of 6</span>
+            <span id="quizRankBadge" class="text-amber-300">Rank: Gravity Cadet 🚀</span>
+          </div>
+          <div class="w-full h-3 bg-slate-950 rounded-full overflow-hidden border border-slate-800">
+            <div id="quizProgressBar" class="h-full bg-gradient-to-r from-cyan-400 via-indigo-500 to-amber-400 transition-all duration-500" style="width: 16.66%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Quiz Card -->
+      <div id="quizActiveContainer" class="bg-slate-900 rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-6">
+        <div class="flex items-center justify-between">
+          <span id="quizQTopicBadge" class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+            Topic: Relation Between g & G
+          </span>
+          <span id="quizQPointsBadge" class="text-xs font-bold text-amber-400 mono">+100 XP</span>
+        </div>
+
+        <h3 id="quizQuestionText" class="text-lg sm:text-xl font-bold text-white leading-relaxed">
+          Loading question...
+        </h3>
+
+        <!-- Options Grid -->
+        <div id="quizOptionsGrid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+
+        <!-- Explanation Feedback Box -->
+        <div id="quizFeedbackBox" class="hidden p-5 rounded-2xl border space-y-2">
+          <div id="quizFeedbackTitle" class="font-extrabold text-base"></div>
+          <div id="quizFeedbackExplanation" class="text-sm text-slate-200 leading-relaxed"></div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="flex items-center justify-between pt-4 border-t border-slate-800">
+          <button onclick="restartQuiz()" class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-800 text-slate-400 hover:text-white transition">
+            ↺ Restart Quiz
+          </button>
+          <button id="quizNextBtn" onclick="nextQuizQuestion()" class="hidden px-6 py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-cyan-500 to-indigo-600 text-white shadow-lg hover:opacity-95 transition">
+            Next Question →
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Summary / Trophy Card (Hidden until completion) -->
+      <div id="quizSummaryContainer" class="hidden bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 rounded-3xl p-8 border border-amber-500/50 shadow-2xl text-center space-y-6">
+        <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-4xl shadow-xl">
+          🏆
+        </div>
+        <div class="space-y-2">
+          <div id="quizFinalBadge" class="inline-block px-4 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-widest">
+            Master of Gravitation
+          </div>
+          <h3 class="text-3xl font-black text-white">Quiz Completed!</h3>
+          <p id="quizFinalMessage" class="text-slate-300 max-w-xl mx-auto"></p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mx-auto">
+          <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+            <div class="text-xs text-slate-400 font-bold uppercase">Final Score</div>
+            <div id="quizFinalScore" class="text-2xl font-black text-emerald-400 mono mt-1">6 / 6</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+            <div class="text-xs text-slate-400 font-bold uppercase">Total XP Earned</div>
+            <div id="quizFinalXP" class="text-2xl font-black text-cyan-400 mono mt-1">600 XP</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+            <div class="text-xs text-slate-400 font-bold uppercase">Best Streak</div>
+            <div id="quizFinalStreak" class="text-2xl font-black text-amber-400 mono mt-1">6 🔥</div>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button onclick="restartQuiz()" class="px-8 py-3.5 rounded-2xl font-extrabold text-sm bg-gradient-to-r from-amber-400 via-orange-500 to-pink-500 text-slate-950 shadow-xl hover:opacity-95 transition">
+            🔄 Play Again
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER WITH CREDITS -->
+  <footer class="bg-slate-950 border-t border-slate-800/80 py-6 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+        <span>Class 11 Physics • NCERT Chapter 8: Gravitation Interactive E-Book</span>
+      </div>
+      <div class="text-slate-300 font-semibold">
+        Creation Credits: <span class="text-amber-400 font-extrabold">Hrishikesh M (PGT Physics)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       JAVASCRIPT: SIMULATIONS, MATH RENDERING, QUESTIONS & GAMIFIED QUIZ
+       ======================================================================= -->
+  <script>
+    // Helper to trigger KaTeX math rendering
+    function renderMath() {
+      if (window.renderMathInElement) {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    // Tab Switching Logic
+    let activeTabIndex = 0;
+    function switchTab(index) {
+      activeTabIndex = index;
+      const sections = document.querySelectorAll('.tab-section');
+      const buttons = document.querySelectorAll('#tab-nav .tab-btn');
+
+      sections.forEach((sec, i) => {
+        if (i === index) {
+          sec.classList.remove('hidden');
+        } else {
+          sec.classList.add('hidden');
+        }
+      });
+
+      buttons.forEach((btn, i) => {
+        if (i === index) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Redraw simulations when tab becomes visible
+      if (index === 0) drawSim1();
+      if (index === 1) updateSim2();
+      if (index === 2) updateSim3();
+      if (index === 3) updateSim4();
+      renderMath();
+    }
+
+    /* =======================================================================
+       SIMULATION 1: RELATION BETWEEN g AND G & FREE-FALL LAB
+       ======================================================================= */
+    const sim1State = {
+      planetName: 'Earth',
+      massRatio: 1.0,    // in Earth masses (M_earth = 5.972e24 kg)
+      radiusRatio: 1.0,  // in Earth radii (R_earth = 6.378e6 m)
+      g: 9.80,
+      medium: 'vacuum',  // 'vacuum' or 'air'
+      dropping: false,
+      t: 0,
+      y1: 0,             // compact sphere 0 to 20 m
+      y2: 0,             // large hollow sphere 0 to 20 m
+      v1: 0,
+      v2: 0,
+      animId: null
+    };
+
+    function setPlanetPreset(preset) {
+      const mSlider = document.getElementById('sim1MassSlider');
+      const rSlider = document.getElementById('sim1RadiusSlider');
+      if (preset === 'earth') {
+        sim1State.planetName = 'Earth';
+        sim1State.massRatio = 1.00;
+        sim1State.radiusRatio = 1.00;
+        sim1State.g = 9.80;
+        mSlider.value = 1.00;
+        rSlider.value = 1.00;
+      } else if (preset === 'moon') {
+        // Textbook Sample Problem: R = 1.7e6 m, M = 7.4e22 kg => g = 1.71 m/s^2
+        sim1State.planetName = 'Moon (Textbook Sample)';
+        sim1State.massRatio = 0.0124;
+        sim1State.radiusRatio = 0.2665;
+        sim1State.g = 1.71;
+        mSlider.value = 0.02;
+        rSlider.value = 0.27;
+      } else if (preset === 'mars') {
+        sim1State.planetName = 'Mars';
+        sim1State.massRatio = 0.107;
+        sim1State.radiusRatio = 0.532;
+        sim1State.g = 3.72;
+        mSlider.value = 0.11;
+        rSlider.value = 0.53;
+      } else if (preset === 'jupiter') {
+        sim1State.planetName = 'Jupiter (Scaled)';
+        sim1State.massRatio = 5.00;
+        sim1State.radiusRatio = 1.40;
+        sim1State.g = 24.99;
+        mSlider.value = 5.00;
+        rSlider.value = 1.40;
+      }
+      resetSim1Drop();
+      updateSim1UI();
+    }
+
+    function updateSim1Custom() {
+      const mRatio = parseFloat(document.getElementById('sim1MassSlider').value);
+      const rRatio = parseFloat(document.getElementById('sim1RadiusSlider').value);
+      sim1State.planetName = 'Custom Planet';
+      sim1State.massRatio = mRatio;
+      sim1State.radiusRatio = rRatio;
+      sim1State.g = 9.80 * (mRatio / (rRatio * rRatio));
+      resetSim1Drop();
+      updateSim1UI();
+    }
+
+    function setSim1Medium(med) {
+      sim1State.medium = med;
+      const btnVac = document.getElementById('btnVacuum');
+      const btnAir = document.getElementById('btnAir');
+      if (med === 'vacuum') {
+        btnVac.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-cyan-500 text-slate-950 transition';
+        btnAir.className = 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-300 hover:text-white transition';
+      } else {
+        btnAir.className = 'px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-400 text-slate-950 transition';
+        btnVac.className = 'px-3 py-1.5 rounded-lg text-xs font-bold text-slate-300 hover:text-white transition';
+      }
+      resetSim1Drop();
+    }
+
+    function updateSim1UI() {
+      const M_kg = (sim1State.massRatio * 5.97e24).toExponential(2).replace('e+', ' × 10^');
+      const R_m = (sim1State.radiusRatio * 6.38e6).toExponential(2).replace('e+', ' × 10^');
+
+      document.getElementById('sim1PlanetName').textContent = sim1State.planetName;
+      document.getElementById('sim1GVal').textContent = sim1State.g.toFixed(2) + ' m/s²';
+      document.getElementById('sim1MassLabel').textContent = `${M_kg} kg (${sim1State.massRatio.toFixed(2)} M⊕)`;
+      document.getElementById('sim1RadiusLabel').textContent = `${R_m} m (${sim1State.radiusRatio.toFixed(2)} R⊕)`;
+
+      const w = (2.0 * sim1State.g).toFixed(2);
+      document.getElementById('sim1Weight1').textContent = `Weight F₁ = ${w} N`;
+      document.getElementById('sim1Weight2').textContent = `Weight F₂ = ${w} N`;
+      drawSim1();
+    }
+
+    function startSim1Drop() {
+      if (sim1State.dropping) return;
+      if (sim1State.y1 >= 20 && sim1State.y2 >= 20) {
+        sim1State.t = 0;
+        sim1State.y1 = 0;
+        sim1State.y2 = 0;
+        sim1State.v1 = 0;
+        sim1State.v2 = 0;
+      }
+      sim1State.dropping = true;
+      let lastTime = performance.now();
+
+      function animate(now) {
+        if (!sim1State.dropping) return;
+        const dt = Math.min((now - lastTime) / 1000, 0.05);
+        lastTime = now;
+        sim1State.t += dt;
+
+        // Body 1: small volume -> negligible air resistance
+        const a1 = sim1State.medium === 'vacuum' ? sim1State.g : sim1State.g * 0.96;
+        // Body 2: large volume -> higher upward thrust/drag in air
+        const a2 = sim1State.medium === 'vacuum' ? sim1State.g : sim1State.g * 0.58;
+
+        if (sim1State.y1 < 20) {
+          sim1State.v1 += a1 * dt;
+          sim1State.y1 = Math.min(20, sim1State.y1 + sim1State.v1 * dt);
+        }
+        if (sim1State.y2 < 20) {
+          sim1State.v2 += a2 * dt;
+          sim1State.y2 = Math.min(20, sim1State.y2 + sim1State.v2 * dt);
+        }
+
+        drawSim1();
+
+        if (sim1State.y1 < 20 || sim1State.y2 < 20) {
+          sim1State.animId = requestAnimationFrame(animate);
+        } else {
+          sim1State.dropping = false;
+        }
+      }
+      sim1State.animId = requestAnimationFrame(animate);
+    }
+
+    function resetSim1Drop() {
+      sim1State.dropping = false;
+      if (sim1State.animId) cancelAnimationFrame(sim1State.animId);
+      sim1State.t = 0;
+      sim1State.y1 = 0;
+      sim1State.y2 = 0;
+      sim1State.v1 = 0;
+      sim1State.v2 = 0;
+      drawSim1();
+    }
+
+    function drawSim1() {
+      const canvas = document.getElementById('sim1Canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      // Background sky/vacuum
+      const bgGrad = ctx.createLinearGradient(0, 0, 0, H);
+      if (sim1State.medium === 'vacuum') {
+        bgGrad.addColorStop(0, '#020617');
+        bgGrad.addColorStop(1, '#0f172a');
+      } else {
+        bgGrad.addColorStop(0, '#0c4a6e');
+        bgGrad.addColorStop(1, '#1e293b');
+      }
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, W, H);
+
+      // Left Panel: Free-Fall Tower (x: 30 to 360)
+      ctx.strokeStyle = '#334155';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(20, 20, 340, H - 40);
+
+      // Title inside left panel
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText(`Free-Fall Chamber (${sim1State.medium === 'vacuum' ? 'VACUUM' : 'AIR MEDIUM'})`, 35, 45);
+
+      // Height scale (0m at top y=80, 20m at surface y=320)
+      const topY = 80;
+      const botY = 320;
+      ctx.strokeStyle = '#475569';
+      ctx.beginPath();
+      ctx.moveTo(60, topY);
+      ctx.lineTo(60, botY);
+      ctx.stroke();
+
+      for (let m = 0; m <= 20; m += 5) {
+        const py = topY + (m / 20) * (botY - topY);
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '11px "JetBrains Mono"';
+        ctx.fillText(`${20 - m}m`, 28, py + 4);
+        ctx.beginPath();
+        ctx.moveTo(56, py);
+        ctx.lineTo(64, py);
+        ctx.stroke();
+      }
+
+      // Ground Surface
+      ctx.fillStyle = '#1e293b';
+      ctx.fillRect(21, botY, 338, H - 20 - botY);
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(21, botY);
+      ctx.lineTo(359, botY);
+      ctx.stroke();
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 12px "Plus Jakarta Sans"';
+      ctx.fillText(`Planet Surface (g = ${sim1State.g.toFixed(2)} m/s²)`, 105, botY + 25);
+
+      // Positions of Body 1 (Small Volume) and Body 2 (Large Volume)
+      const py1 = topY + (sim1State.y1 / 20) * (botY - topY);
+      const py2 = topY + (sim1State.y2 / 20) * (botY - topY);
+
+      // Body 1 (Small compact sphere, x=140)
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath();
+      ctx.arc(140, py1 - 10, 10, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      // Downward mg arrow on Body 1
+      ctx.strokeStyle = '#f472b6';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(140, py1);
+      ctx.lineTo(140, py1 + 24);
+      ctx.stroke();
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = 'bold 11px "Plus Jakarta Sans"';
+      ctx.fillText('Small Vol (2 kg)', 100, topY - 16);
+
+      // Body 2 (Large volume sphere, x=265)
+      ctx.fillStyle = 'rgba(244, 114, 182, 0.35)';
+      ctx.beginPath();
+      ctx.arc(265, py2 - 22, 22, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#f472b6';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Upward air buoyancy arrow if in air
+      if (sim1State.medium === 'air') {
+        ctx.strokeStyle = '#fbbf24';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(265, py2 - 44);
+        ctx.lineTo(265, py2 - 64);
+        ctx.stroke();
+        ctx.fillStyle = '#fbbf24';
+        ctx.font = '10px "Plus Jakarta Sans"';
+        ctx.fillText('Upthrust ↑', 240, py2 - 68);
+      }
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = 'bold 11px "Plus Jakarta Sans"';
+      ctx.fillText('Large Vol (2 kg)', 222, topY - 16);
+
+      // Timer display
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 12px "JetBrains Mono"';
+      ctx.fillText(`t = ${sim1State.t.toFixed(2)} s`, 270, 45);
+
+      // Right Panel: Fig 8.9 Planet Mass M & Radius R visualization (x: 380 to 660)
+      const cx = 520;
+      const cy = 220;
+      const visualR = Math.max(38, Math.min(115, 72 * sim1State.radiusRatio));
+
+      // Planet glow
+      const planetGrad = ctx.createRadialGradient(cx - visualR * 0.2, cy - visualR * 0.2, 8, cx, cy, visualR);
+      planetGrad.addColorStop(0, '#38bdf8');
+      planetGrad.addColorStop(0.6, '#1d4ed8');
+      planetGrad.addColorStop(1, '#1e1b4b');
+
+      ctx.fillStyle = planetGrad;
+      ctx.beginPath();
+      ctx.arc(cx, cy, visualR, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#7dd3fc';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Centre O
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText('O (Mass M)', cx - 32, cy + 18);
+
+      // Radius line R
+      ctx.strokeStyle = '#fde047';
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx + visualR, cy);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.fillStyle = '#fde047';
+      ctx.fillText('R', cx + visualR / 2 - 5, cy - 6);
+
+      // Test mass m on top of planet
+      const mY = cy - visualR - 7;
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath();
+      ctx.arc(cx, mY, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillStyle = '#fde047';
+      ctx.fillText('m', cx - 6, mY - 12);
+
+      // Force vector F = mg towards centre O
+      ctx.strokeStyle = '#f472b6';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(cx, mY + 7);
+      ctx.lineTo(cx, mY + 38);
+      ctx.stroke();
+      ctx.fillStyle = '#f472b6';
+      ctx.fillText('F = mg', cx + 8, mY + 30);
+
+      // Heading on right panel
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText('Fig. 8.9: g = GM / R²', 450, 45);
+    }
+
+    /* =======================================================================
+       SIMULATION 2: VARIATION OF g WITH ALTITUDE (h)
+       ======================================================================= */
+    const R_EARTH = 6400; // km
+    const G_SURF = 9.80;  // m/s^2
+
+    function setAltitudePreset(h_km) {
+      document.getElementById('sim2HSlider').value = h_km;
+      updateSim2();
+    }
+
+    function updateSim2() {
+      const h = parseFloat(document.getElementById('sim2HSlider').value);
+      const hRatio = h / R_EARTH;
+
+      // Exact Eq (17): g' = g * R^2 / (R + h)^2
+      const gExact = G_SURF * Math.pow(R_EARTH / (R_EARTH + h), 2);
+      // Binomial Approx Eq (18): g' = g * (1 - 2h/R)
+      const gApprox = G_SURF * (1 - (2 * h) / R_EARTH);
+
+      const deltaG = G_SURF - gExact;
+      const pctDec = (deltaG / G_SURF) * 100;
+
+      document.getElementById('sim2HLabel').textContent = `${h.toFixed(0)} km (${hRatio.toFixed(2)} R)`;
+      document.getElementById('sim2ExactVal').textContent = `${gExact.toFixed(2)} m/s²`;
+      document.getElementById('sim2ExactRatio').textContent = `${((gExact / G_SURF) * 100).toFixed(1)}% of surface g`;
+
+      document.getElementById('sim2ApproxVal').textContent = `${gApprox.toFixed(2)} m/s²`;
+      const approxNotice = document.getElementById('sim2ApproxNotice');
+      if (h <= 320) {
+        approxNotice.textContent = '✓ Accurate (h ≪ R)';
+        approxNotice.className = 'text-xs text-emerald-300 font-semibold';
+      } else if (h < 3200) {
+        approxNotice.textContent = '⚠ Diverging (Use Exact Eq. 17)';
+        approxNotice.className = 'text-xs text-amber-300 font-semibold';
+      } else {
+        approxNotice.textContent = '✗ Invalid for large h!';
+        approxNotice.className = 'text-xs text-rose-400 font-bold';
+      }
+
+      document.getElementById('sim2DistCenter').textContent = `${(R_EARTH + h).toFixed(0)} km (${(1 + hRatio).toFixed(2)} R)`;
+      document.getElementById('sim2DeltaG').textContent = `${deltaG.toFixed(2)} m/s²`;
+      document.getElementById('sim2PercentDec').textContent = `${pctDec.toFixed(1)}%`;
+
+      drawSim2(h, gExact, gApprox);
+    }
+
+    function drawSim2(h, gExact, gApprox) {
+      const canvas = document.getElementById('sim2Canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(0, 0, W, H);
+
+      // LEFT HALF: Fig 8.10(a) Earth + Point A (surface) + Point B (height h)
+      const cx = 165;
+      const cy = 285;
+      const earthR = 72; // 1R = 72 px, so 2R = 144 px above surface
+
+      // Earth circle
+      const grad = ctx.createRadialGradient(cx, cy, 10, cx, cy, earthR);
+      grad.addColorStop(0, '#065f46');
+      grad.addColorStop(1, '#0f172a');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(cx, cy, earthR, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#34d399';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Centre O
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.font = 'bold 12px "Plus Jakarta Sans"';
+      ctx.fillText('O', cx - 16, cy + 5);
+
+      // Point A on surface
+      const ay = cy - earthR;
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath();
+      ctx.arc(cx, ay, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillText('A (Surface, g)', cx + 10, ay + 4);
+
+      // Radius R line
+      ctx.strokeStyle = '#94a3b8';
+      ctx.setLineDash([4, 3]);
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(cx, ay);
+      ctx.stroke();
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText('R', cx - 18, cy - earthR / 2);
+
+      // Point B at height h
+      const hPx = (h / R_EARTH) * earthR;
+      const by = ay - hPx;
+
+      ctx.strokeStyle = '#34d399';
+      ctx.beginPath();
+      ctx.moveTo(cx, ay);
+      ctx.lineTo(cx, by);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      if (h > 300) {
+        ctx.fillStyle = '#34d399';
+        ctx.fillText(`h = ${h} km`, cx - 78, (ay + by) / 2 + 4);
+      }
+
+      // Satellite / Point B marker
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath();
+      ctx.arc(cx, by, 7, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.fillStyle = '#fde047';
+      ctx.font = 'bold 12px "Plus Jakarta Sans"';
+      ctx.fillText(`B (g' = ${gExact.toFixed(2)} m/s²)`, cx + 12, by + 4);
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText('Fig. 8.10(a): Altitude h', 40, 32);
+
+      // RIGHT HALF: Fig 8.10(b) Graph of g' vs r (and Binomial comparison)
+      const gx0 = 360;
+      const gy0 = 340;
+      const gW = 285;
+      const gH = 260;
+
+      // Axes
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.moveTo(gx0, gy0 - gH);
+      ctx.lineTo(gx0, gy0);
+      ctx.lineTo(gx0 + gW, gy0);
+      ctx.stroke();
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText("Fig. 8.10(b): Variation of g' with h", gx0 + 10, 32);
+
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '11px "JetBrains Mono"';
+      ctx.fillText("g' (m/s²)", gx0 - 25, gy0 - gH - 8);
+      ctx.fillText('Height h →', gx0 + gW - 65, gy0 + 32);
+
+      // Y ticks
+      const yMax = 10;
+      [0, 2.45, 4.9, 9.8].forEach(val => {
+        const py = gy0 - (val / yMax) * gH;
+        ctx.strokeStyle = '#1e293b';
+        ctx.beginPath();
+        ctx.moveTo(gx0, py);
+        ctx.lineTo(gx0 + gW, py);
+        ctx.stroke();
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillText(val.toFixed(2), gx0 - 38, py + 4);
+      });
+
+      // X ticks: h = 0, R, 2R
+      [0, 1, 2].forEach(mult => {
+        const px = gx0 + (mult / 2) * gW;
+        ctx.fillStyle = '#94a3b8';
+        ctx.fillText(mult === 0 ? '0' : `${mult}R`, px - 8, gy0 + 18);
+      });
+
+      // Plot Exact Curve g' = g / (1 + h/R)^2
+      ctx.strokeStyle = '#10b981';
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      for (let i = 0; i <= 100; i++) {
+        const hNorm = (i / 100) * 2; // 0 to 2R
+        const gVal = G_SURF / Math.pow(1 + hNorm, 2);
+        const px = gx0 + (hNorm / 2) * gW;
+        const py = gy0 - (gVal / yMax) * gH;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+
+      // Plot Binomial Approximation Line g' = g(1 - 2h/R) for h from 0 to 0.5R
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 2;
+      ctx.setLineDash([5, 4]);
+      ctx.beginPath();
+      ctx.moveTo(gx0, gy0 - (G_SURF / yMax) * gH);
+      ctx.lineTo(gx0 + (0.5 / 2) * gW, gy0);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Current operating point dot on Exact curve
+      const curX = gx0 + (h / (2 * R_EARTH)) * gW;
+      const curY = gy0 - (gExact / yMax) * gH;
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath();
+      ctx.arc(curX, curY, 6, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#fff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Legend
+      ctx.fillStyle = '#10b981';
+      ctx.fillRect(gx0 + 100, gy0 - gH + 15, 14, 4);
+      ctx.fillStyle = '#cbd5e1';
+      ctx.font = '11px "Plus Jakarta Sans"';
+      ctx.fillText('Exact: g R² / (R+h)²', gx0 + 120, gy0 - gH + 21);
+
+      ctx.fillStyle = '#f59e0b';
+      ctx.fillRect(gx0 + 100, gy0 - gH + 33, 14, 4);
+      ctx.fillStyle = '#cbd5e1';
+      ctx.fillText('Binomial: g(1 - 2h/R)', gx0 + 120, gy0 - gH + 39);
+    }
+
+    /* =======================================================================
+       SIMULATION 3: VARIATION OF g WITH DEPTH (d) & UNIFIED GRAPH
+       ======================================================================= */
+    function setDepthPreset(d_km) {
+      document.getElementById('sim3DSlider').value = d_km;
+      updateSim3();
+    }
+
+    function updateSim3() {
+      const d = parseFloat(document.getElementById('sim3DSlider').value);
+      const rInner = R_EARTH - d;
+      const fracDec = d / R_EARTH;
+      const gPrime = G_SURF * (1 - fracDec);
+      const massFrac = Math.pow(1 - fracDec, 3) * 100;
+      const weight60 = 60 * gPrime;
+
+      document.getElementById('sim3DLabel').textContent = `${d.toFixed(0)} km (${fracDec.toFixed(2)} R)`;
+      document.getElementById('sim3GPrimeVal').textContent = `${gPrime.toFixed(2)} m/s²`;
+      document.getElementById('sim3InnerRVal').textContent = `${rInner.toFixed(0)} km`;
+      document.getElementById('sim3MassFrac').textContent = `${massFrac.toFixed(2)}% of M`;
+      document.getElementById('sim3FracDec').textContent = fracDec.toFixed(4);
+      document.getElementById('sim3PctDec').textContent = `${(fracDec * 100).toFixed(2)}%`;
+      document.getElementById('sim3Weight60').textContent = `${weight60.toFixed(1)} N (Mass = 60 kg)`;
+
+      drawSim3(d, rInner, gPrime);
+    }
+
+    function drawSim3(d, rInner, gPrime) {
+      const canvas = document.getElementById('sim3Canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(0, 0, W, H);
+
+      // LEFT HALF: Fig 8.11(a) Earth Outer Shell (thickness d) & Active Inner Sphere (radius R-d)
+      const cx = 165;
+      const cy = 225;
+      const outerR = 120;
+      const innerR = Math.max(0, (rInner / R_EARTH) * outerR);
+
+      // Outer spherical shell of thickness d (Zero net force region)
+      ctx.fillStyle = 'rgba(51, 65, 85, 0.45)';
+      ctx.beginPath();
+      ctx.arc(cx, cy, outerR, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Active inner sphere of radius (R - d)
+      if (innerR > 0.5) {
+        const innerGrad = ctx.createRadialGradient(cx, cy, 4, cx, cy, innerR);
+        innerGrad.addColorStop(0, '#f59e0b');
+        innerGrad.addColorStop(0.7, '#b45309');
+        innerGrad.addColorStop(1, '#78350f');
+        ctx.fillStyle = innerGrad;
+        ctx.beginPath();
+        ctx.arc(cx, cy, innerR, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#fbbf24';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
+
+      // Vertical Tunnel Shaft from top surface A to centre O
+      ctx.fillStyle = '#090d16';
+      ctx.fillRect(cx - 5, cy - outerR, 10, outerR);
+
+      // Centre O
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(cx, cy, 3.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.font = 'bold 12px "Plus Jakarta Sans"';
+      ctx.fillText('O (Centre)', cx - 28, cy + 20);
+
+      // Point A at top surface
+      const ay = cy - outerR;
+      ctx.fillStyle = '#38bdf8';
+      ctx.beginPath();
+      ctx.arc(cx, ay, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.fillText('A (Surface)', cx - 32, ay - 10);
+
+      // Point B at depth d
+      const by = cy - innerR;
+      ctx.fillStyle = '#f472b6';
+      ctx.beginPath();
+      ctx.arc(cx, by, 6.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+      ctx.fillStyle = '#f472b6';
+      ctx.fillText(`B (d = ${d} km)`, cx + 12, by + 4);
+
+      // Label R - d
+      if (innerR > 22) {
+        ctx.fillStyle = '#fde047';
+        ctx.font = 'bold 11px "JetBrains Mono"';
+        ctx.fillText(`R-d`, cx - 32, cy - innerR / 2);
+      }
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText('Fig. 8.11(a): Depth d & Inner Sphere (R-d)', 25, 32);
+
+      // RIGHT HALF: Unified Graph of g vs distance r from centre O (r = 0 to 3R)
+      const gx0 = 365;
+      const gy0 = 345;
+      const gW = 280;
+      const gH = 260;
+
+      // Axes
+      ctx.strokeStyle = '#64748b';
+      ctx.lineWidth = 1.8;
+      ctx.beginPath();
+      ctx.moveTo(gx0, gy0 - gH);
+      ctx.lineTo(gx0, gy0);
+      ctx.lineTo(gx0 + gW, gy0);
+      ctx.stroke();
+
+      ctx.fillStyle = '#e2e8f0';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText("Fig. 8.11(b): g vs Distance r from Centre", gx0, 32);
+
+      // r = R vertical dashed boundary
+      const rxR = gx0 + (1 / 3) * gW;
+      const ryMax = gy0 - (G_SURF / 10.5) * gH;
+      ctx.strokeStyle = '#475569';
+      ctx.setLineDash([4, 4]);
+      ctx.beginPath();
+      ctx.moveTo(rxR, ryMax);
+      ctx.lineTo(rxR, gy0);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Labels on axes
+      ctx.fillStyle = '#94a3b8';
+      ctx.font = '11px "JetBrains Mono"';
+      ctx.fillText('O (r=0)', gx0 - 15, gy0 + 18);
+      ctx.fillStyle = '#38bdf8';
+      ctx.fillText('r = R (Surface)', rxR - 35, gy0 + 18);
+      ctx.fillStyle = '#94a3b8';
+      ctx.fillText('2R', gx0 + (2 / 3) * gW - 8, gy0 + 18);
+      ctx.fillText('3R', gx0 + gW - 12, gy0 + 18);
+
+      // Inside Earth Line: g_d ∝ r (from r=0 to r=R)
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 3.5;
+      ctx.beginPath();
+      ctx.moveTo(gx0, gy0);
+      ctx.lineTo(rxR, ryMax);
+      ctx.stroke();
+
+      // Outside Earth Curve: g_h ∝ 1/r^2 (from r=R to r=3R)
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      for (let i = 0; i <= 60; i++) {
+        const rRatio = 1 + (i / 60) * 2; // 1R to 3R
+        const gVal = G_SURF / (rRatio * rRatio);
+        const px = gx0 + (rRatio / 3) * gW;
+        const py = gy0 - (gVal / 10.5) * gH;
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+
+      // Labels for proportionality
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 12px "Plus Jakarta Sans"';
+      ctx.fillText('g ∝ r (Inside)', gx0 + 8, gy0 - 140);
+      ctx.fillStyle = '#38bdf8';
+      ctx.fillText('g ∝ 1/r² (Outside)', rxR + 40, gy0 - 110);
+
+      // Current probe position dot on the Inside line
+      const curRatio = rInner / R_EARTH;
+      const dotX = gx0 + (curRatio / 3) * gW;
+      const dotY = gy0 - (gPrime / 10.5) * gH;
+
+      ctx.fillStyle = '#f472b6';
+      ctx.beginPath();
+      ctx.arc(dotX, dotY, 6.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+
+    /* =======================================================================
+       SIMULATION 4: VARIATION OF g WITH SHAPE OF EARTH
+       ======================================================================= */
+    function setLatitudePreset(lat) {
+      document.getElementById('sim4LatSlider').value = lat;
+      updateSim4();
+    }
+
+    function updateSim4() {
+      const latDeg = parseFloat(document.getElementById('sim4LatSlider').value);
+      const bulgeExag = parseFloat(document.getElementById('sim4BulgeSlider').value);
+      const latRad = (latDeg * Math.PI) / 180;
+
+      // R_e = 6378 km, R_p = 6357 km (Difference = 21 km)
+      const Re = 6378.0;
+      const Rp = 6357.0;
+      const R_lat = Re - 21.0 * Math.pow(Math.sin(latRad), 2);
+
+      // Textbook: At sea level, g at pole is greater than equator by 1.80 cm/s^2 (0.018 m/s^2) due to shape
+      const g_equator = 9.800;
+      const delta_g_cm = 1.80 * Math.pow(Math.sin(latRad), 2);
+      const g_lat = g_equator + delta_g_cm / 100;
+
+      let locName = '';
+      if (latDeg === 0) locName = ' (Equator)';
+      else if (latDeg === 90) locName = ' (North Pole)';
+
+      document.getElementById('sim4LatLabel').textContent = `λ = ${latDeg}°${locName}`;
+      document.getElementById('sim4BulgeLabel').textContent = `${bulgeExag}× Exaggerated`;
+      document.getElementById('sim4RadiusVal').textContent = `${R_lat.toFixed(1)} km`;
+      document.getElementById('sim4GVal').textContent = `${g_lat.toFixed(4)} m/s²`;
+      document.getElementById('sim4GDiff').textContent = `+${delta_g_cm.toFixed(2)} cm/s² vs Equator`;
+
+      drawSim4(latDeg, latRad, bulgeExag, R_lat, g_lat);
+    }
+
+    function drawSim4(latDeg, latRad, bulgeExag, R_lat, g_lat) {
+      const canvas = document.getElementById('sim4Canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;
+      const H = canvas.height;
+      ctx.clearRect(0, 0, W, H);
+
+      ctx.fillStyle = '#020617';
+      ctx.fillRect(0, 0, W, H);
+
+      const cx = 340;
+      const cy = 220;
+      const rx = 165; // Equatorial semi-axis
+      const ry = Math.max(95, 165 - bulgeExag * 2.2); // Polar semi-axis exaggerated
+
+      // Reference Perfect Sphere circle (dashed)
+      ctx.strokeStyle = 'rgba(148, 163, 184, 0.25)';
+      ctx.lineWidth = 1.5;
+      ctx.setLineDash([5, 5]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, rx, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      // Oblate Spheroid Earth (Fig. 8.13)
+      const grad = ctx.createRadialGradient(cx, cy, 15, cx, cy, rx);
+      grad.addColorStop(0, '#3b0764');
+      grad.addColorStop(0.65, '#1e1b4b');
+      grad.addColorStop(1, '#0f172a');
+
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, rx, ry, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#a855f7';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      // Equatorial Line & Polar Axis
+      ctx.strokeStyle = '#ec4899';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(cx - rx, cy);
+      ctx.lineTo(cx + rx, cy);
+      ctx.stroke();
+
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy - ry);
+      ctx.lineTo(cx, cy + ry);
+      ctx.stroke();
+
+      // Labels for Fig. 8.13
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText('North Pole (g_p = Max)', cx - 68, cy - ry - 14);
+      ctx.fillText('South Pole', cx - 34, cy + ry + 22);
+      ctx.fillText('Rp = 6357 km', cx + 8, cy - ry / 2);
+
+      ctx.fillStyle = '#f472b6';
+      ctx.fillText('Equator (g_e = Min)', cx + rx + 12, cy + 4);
+      ctx.fillText('Re = 6378 km', cx - rx / 2 - 30, cy - 8);
+
+      // Traveler Position at angle latRad
+      const px = cx + rx * Math.cos(latRad);
+      const py = cy - ry * Math.sin(latRad);
+
+      // Radius vector from centre O to Traveler P
+      ctx.strokeStyle = '#fde047';
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(px, py);
+      ctx.stroke();
+
+      // Angle arc for latitude λ
+      if (latDeg > 3) {
+        ctx.strokeStyle = '#fde047';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.arc(cx, cy, 38, -latRad, 0);
+        ctx.stroke();
+        ctx.fillStyle = '#fde047';
+        ctx.font = 'bold 12px "JetBrains Mono"';
+        ctx.fillText(`λ=${latDeg}°`, cx + 44, cy - 8);
+      }
+
+      // Traveler dot P
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath();
+      ctx.arc(px, py, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#ffffff';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Callout badge near traveler
+      ctx.fillStyle = '#f8fafc';
+      ctx.font = 'bold 12px "JetBrains Mono"';
+      ctx.fillText(`R = ${R_lat.toFixed(1)} km | g = ${g_lat.toFixed(4)} m/s²`, 24, 36);
+      ctx.fillStyle = '#c084fc';
+      ctx.font = 'bold 13px "Plus Jakarta Sans"';
+      ctx.fillText('Fig. 8.13: Oblate Spheroid Earth (Re - Rp ≈ 21 km)', 24, 395);
+    }
+
+    /* =======================================================================
+       TAB 5: 10 PRACTICE QUESTIONS (8 NUMERICAL + 2 ANALYTICAL)
+       ======================================================================= */
+    const practiceQuestions = [
+      {
+        id: 1,
+        type: 'Numerical • Relation Between g & G',
+        badgeColor: 'cyan',
+        question: 'The radius of the Moon is $1.7 \\times 10^6\\text{ m}$ and its mass is $7.4 \\times 10^{22}\\text{ kg}$. If $G = 6.67 \\times 10^{-11}\\text{ N m}^2\\text{ kg}^{-2}$, calculate the acceleration due to gravity on the surface of the Moon. Also find the weight of a $60\\text{ kg}$ astronaut on the Moon.',
+        hint: 'Use $g_m = \\frac{GM_m}{R_m^2}$ and Weight $W = m g_m$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Write down the given values:</strong><br/>
+              Mass of Moon, $M_m = 7.4 \\times 10^{22}\\text{ kg}$<br/>
+              Radius of Moon, $R_m = 1.7 \\times 10^6\\text{ m}$<br/>
+              Universal gravitational constant, $G = 6.67 \\times 10^{-11}\\text{ N m}^2\\text{ kg}^{-2}$
+            </div>
+            <div><strong>Step 2: Apply the formula for acceleration due to gravity:</strong>
+              $$g_m = \\frac{G M_m}{R_m^2} = \\frac{6.67 \\times 10^{-11} \\times 7.4 \\times 10^{22}}{(1.7 \\times 10^6)^2}$$
+              $$g_m = \\frac{49.358 \\times 10^{11}}{2.89 \\times 10^{12}} \\approx \\mathbf{1.71\\text{ m s}^{-2}}$$
+            </div>
+            <div><strong>Step 3: Weight of the $60\\text{ kg}$ astronaut on the Moon:</strong>
+              $$W_m = m \\times g_m = 60 \\times 1.71 = \\mathbf{102.6\\text{ N}}$$
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 2,
+        type: 'Numerical • Planetary Mass, Radius & Density',
+        badgeColor: 'cyan',
+        question: 'A newly discovered planet has a mass twice that of the Earth ($M_p = 2M_e$) and a radius three times that of the Earth ($R_p = 3R_e$). If the acceleration due to gravity on the surface of the Earth is $9.8\\text{ m s}^{-2}$, find the value of acceleration due to gravity on the surface of this planet.',
+        hint: 'Use the ratio $\\frac{g_p}{g_e} = \\left(\\frac{M_p}{M_e}\\right)\\left(\\frac{R_e}{R_p}\\right)^2$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Express acceleration due to gravity for Earth and the Planet:</strong>
+              $$g_e = \\frac{G M_e}{R_e^2} \\quad \\text{and} \\quad g_p = \\frac{G M_p}{R_p^2}$$
+            </div>
+            <div><strong>Step 2: Take the ratio $\\frac{g_p}{g_e}$:</strong>
+              $$\\frac{g_p}{g_e} = \\frac{M_p}{M_e} \\times \\left(\\frac{R_e}{R_p}\\right)^2 = 2 \\times \\left(\\frac{1}{3}\\right)^2 = \\frac{2}{9}$$
+            </div>
+            <div><strong>Step 3: Calculate $g_p$:</strong>
+              $$g_p = \\frac{2}{9} \\times 9.8 = \\mathbf{2.18\\text{ m s}^{-2}}$$
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 3,
+        type: 'Numerical • Altitude (Small Height h ≪ R)',
+        badgeColor: 'emerald',
+        question: 'At what height above the Earth’s surface will the value of acceleration due to gravity be reduced by $2\\%$ of its value on the surface of the Earth? (Given: Radius of Earth $R = 6400\\text{ km}$).',
+        hint: 'Since the percentage decrease ($2\\%$) is very small ($< 5\\%$), use the binomial approximation $\\frac{\\Delta g}{g} \\times 100 = \\frac{2h}{R} \\times 100$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Identify the regime ($h \\ll R$):</strong><br/>
+              Since the percentage decrease in $g$ is only $2\\%$, height $h$ is very small compared to $R = 6400\\text{ km}$.
+            </div>
+            <div><strong>Step 2: Apply the fractional/percentage decrease formula for small altitude:</strong>
+              $$\\left(\\frac{g - g'}{g}\\right) \\times 100 = \\frac{2h}{R} \\times 100$$
+              $$2 = \\frac{2h}{6400} \\times 100$$
+            </div>
+            <div><strong>Step 3: Solve for $h$:</strong>
+              $$\\frac{2h}{6400} = \\frac{2}{100} \\implies h = \\frac{6400}{100} = \\mathbf{64\\text{ km}}$$
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 4,
+        type: 'Numerical • Altitude (Large Height Comparable to R)',
+        badgeColor: 'emerald',
+        question: 'How much above the surface of the Earth does the acceleration due to gravity reduce by $64\\%$ of its value on the surface of the Earth? Take radius of the Earth $R = 6400\\text{ km}$.',
+        hint: 'Since $g$ reduces BY $64\\%$, the remaining value is $g\' = 36\\%$ of $g = 0.36g$. Use the exact formula $g\' = g\\left(\\frac{R}{R+h}\\right)^2$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Determine $g'$ at height $h$:</strong><br/>
+              Since $g$ reduces <em>by</em> $64\\%$, the value of $g'$ at height $h$ is:
+              $$g' = (100\\% - 64\\%)\\text{ of } g = 36\\%\\text{ of } g = \\frac{36}{100}g$$
+            </div>
+            <div><strong>Step 2: Apply the Exact Altitude Equation (17):</strong>
+              $$g' = g \\frac{R^2}{(R + h)^2} \\implies \\frac{36}{100}g = g \\frac{R^2}{(R + h)^2}$$
+            </div>
+            <div><strong>Step 3: Take square root on both sides and solve for $h$:</strong>
+              $$\\frac{6}{10} = \\frac{R}{R + h} \\implies 6R + 6h = 10R \\implies 6h = 4R$$
+              $$h = \\frac{2}{3}R = \\frac{2}{3} \\times 6400\\text{ km} = \\mathbf{4266.7\\text{ km}} \\text{ (or } 4.27 \\times 10^6\\text{ m)}$$
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 5,
+        type: 'Numerical • Altitude Where g Becomes g/9',
+        badgeColor: 'emerald',
+        question: 'Find the altitude above the Earth’s surface where the acceleration due to gravity becomes $\\frac{1}{9}\\text{th}$ of its value on the surface of the Earth, in terms of radius $R$ and in kilometres ($R = 6400\\text{ km}$).',
+        hint: 'Substitute $g\' = \\frac{g}{9}$ into $\\frac{g\'}{g} = \\left(\\frac{R}{R+h}\\right)^2$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Use Exact Equation (17) for large heights:</strong>
+              $$\\frac{g'}{g} = \\left(\\frac{R}{R + h}\\right)^2$$
+            </div>
+            <div><strong>Step 2: Substitute $g' = \\frac{g}{9}$:</strong>
+              $$\\frac{1}{9} = \\left(\\frac{R}{R + h}\\right)^2 \\implies \\frac{1}{3} = \\frac{R}{R + h}$$
+            </div>
+            <div><strong>Step 3: Solve for $h$:</strong>
+              $$R + h = 3R \\implies h = 2R = 2 \\times 6400\\text{ km} = \\mathbf{12,800\\text{ km}}$$
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 6,
+        type: 'Numerical • Variation with Depth (d)',
+        badgeColor: 'amber',
+        question: 'Find the percentage decrease in the weight of a body when taken to a depth of $32\\text{ km}$ below the surface of the Earth. Take radius of the Earth $R = 6400\\text{ km}$.',
+        hint: 'Percentage decrease in weight equals percentage decrease in $g$: $\\frac{mg - mg\'}{mg} \\times 100 = \\frac{d}{R} \\times 100$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Recall the formula for weight at depth $d$:</strong>
+              $$m g' = m g \\left(1 - \\frac{d}{R}\\right)$$
+            </div>
+            <div><strong>Step 2: Write the expression for percentage decrease in weight:</strong>
+              $$\\text{\\% decrease in weight} = \\frac{m g - m g'}{m g} \\times 100 = \\frac{d}{R} \\times 100$$
+            </div>
+            <div><strong>Step 3: Substitute $d = 32\\text{ km}$ and $R = 6400\\text{ km}$:</strong>
+              $$\\text{\\% decrease in weight} = \\frac{32}{6400} \\times 100 = \\mathbf{0.5\\%}$$
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 7,
+        type: 'Numerical • Combined Altitude & Depth',
+        badgeColor: 'amber',
+        question: 'At what depth below the surface of the Earth is the value of acceleration due to gravity the same as that at a height of $100\\text{ km}$ above the Earth’s surface? Also state the general relation between $d$ and $h$ for $h \\ll R$.',
+        hint: 'Equate $g_d = g\\left(1 - \\frac{d}{R}\\right)$ and $g_h = g\\left(1 - \\frac{2h}{R}\\right)$ since $h = 100\\text{ km} \\ll R$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Write the expressions for $g_h$ ($h \\ll R$) and $g_d$:</strong>
+              $$g_h = g\\left(1 - \\frac{2h}{R}\\right) \\quad \\text{and} \\quad g_d = g\\left(1 - \\frac{d}{R}\\right)$$
+            </div>
+            <div><strong>Step 2: Equate $g_d = g_h$:</strong>
+              $$g\\left(1 - \\frac{d}{R}\\right) = g\\left(1 - \\frac{2h}{R}\\right) \\implies \\frac{d}{R} = \\frac{2h}{R} \\implies \\mathbf{d = 2h}$$
+            </div>
+            <div><strong>Step 3: Substitute $h = 100\\text{ km}$:</strong>
+              $$d = 2 \\times 100\\text{ km} = \\mathbf{200\\text{ km}}$$
+              (If calculated using the exact altitude formula $1 - \\frac{d}{R} = \\frac{R^2}{(R+h)^2}$, $d \\approx 195.4\\text{ km}$).
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 8,
+        type: 'Numerical • Shape of Earth (Equatorial vs Polar Gravity)',
+        badgeColor: 'purple',
+        question: 'The equatorial radius of the Earth is $R_e = 6378\\text{ km}$ and the polar radius is $R_p = 6357\\text{ km}$. Assuming the mass of the Earth remains constant, find the fractional and percentage increase in acceleration due to gravity when moving from the Equator to the North Pole.',
+        hint: 'Since $g = \\frac{GM}{R^2}$, $\\frac{g_p}{g_e} = \\left(\\frac{R_e}{R_p}\\right)^2$.',
+        solution: `
+          <div class="space-y-2 text-sm text-slate-200">
+            <div><strong>Step 1: Relate $g_p$ and $g_e$ to $R_p$ and $R_e$:</strong>
+              $$g = \\frac{GM}{R^2} \\implies \\frac{g_p}{g_e} = \\left(\\frac{R_e}{R_p}\\right)^2 = \\left(\\frac{6378}{6357}\\right)^2$$
+            </div>
+            <div><strong>Step 2: Calculate the ratio:</strong>
+              $$\\frac{6378}{6357} \\approx 1.003303 \\implies \\left(\\frac{6378}{6357}\\right)^2 \\approx 1.00662$$
+            </div>
+            <div><strong>Step 3: Find fractional and percentage increase:</strong>
+              $$\\text{Fractional increase} = \\frac{g_p - g_e}{g_e} = 1.00662 - 1 = \\mathbf{0.00662}$$
+              $$\\text{Percentage increase} = 0.00662 \\times 100 \\approx \\mathbf{0.66\\%}$$
+              (For $g_e = 9.8\\text{ m s}^{-2}$, this gives $\\Delta g \\approx 1.80\\text{ cm s}^{-2}$ at sea level when accounting for oblate spheroid potential).
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 9,
+        type: 'Analytical / Application • Mass vs Weight at Earth’s Centre & Equator-to-Pole Trade',
+        badgeColor: 'pink',
+        question: '(a) Why does a body become weightless at the centre of the Earth, even though it is surrounded by the entire mass of the Earth? Does its mass also become zero?<br/>(b) A merchant buys gold at the Equator using a sensitive spring balance and sells it at the North Pole using the same spring balance. Will the merchant gain or lose?',
+        hint: 'Think about symmetry of gravitational pulls at the centre $O$, and how $g_p > g_e$ affects spring balance readings ($W = mg$).',
+        solution: `
+          <div class="space-y-2.5 text-sm text-slate-200">
+            <div><strong>Answer (a): Weightlessness at the Centre of the Earth:</strong><br/>
+              At the centre of the Earth ($d = R$), a body is surrounded symmetrically by matter in all directions. Every particle of Earth pulling the body in one direction has an equal particle on the opposite side pulling it with an equal and opposite force. Hence, the <strong>net gravitational force is zero</strong>, and from $g' = g(1 - d/R)$, at $d = R$, $g_0 = 0$.<br/>
+              Therefore, <strong>Weight $W = m g_0 = 0$</strong>. However, <strong>mass $m$ is a measure of the quantity of matter (inertia) and remains completely unchanged ($m \\neq 0$)</strong>.
+            </div>
+            <div><strong>Answer (b): Gold Weighed on a Spring Balance from Equator to Pole:</strong><br/>
+              A spring balance measures <strong>weight ($W = mg$)</strong>, not mass. Since $R_p < R_e$, acceleration due to gravity at the Pole is greater than at the Equator ($g_p > g_e$). Therefore, the same mass of gold will register a <strong>greater weight reading on the spring balance at the North Pole</strong>, so the merchant will <strong>gain</strong>!
+            </div>
+          </div>
+        `
+      },
+      {
+        id: 10,
+        type: 'Analytical / Application • Graphical & Density Analysis',
+        badgeColor: 'pink',
+        question: '(a) Sketch and explain the nature of the graph showing the variation of acceleration due to gravity ($g$) with distance ($r$) from the centre of the Earth, from $r = 0$ to $r \\to \\infty$. Where is $g$ maximum?<br/>(b) If the radius of the Earth were to shrink by $1\\%$, its mass remaining the same, would the value of $g$ on the Earth’s surface increase or decrease, and by what percentage?',
+        hint: 'For (a), compare $g_d \\propto r$ ($r < R$) and $g_h \\propto 1/r^2$ ($r > R$). For (b), use $\\frac{\\Delta g}{g} = -2\\frac{\\Delta R}{R}$.',
+        solution: `
+          <div class="space-y-2.5 text-sm text-slate-200">
+            <div><strong>Answer (a): Nature of $g$ vs $r$ Graph:</strong>
+              <ul class="list-disc list-inside mt-1 space-y-1">
+                <li><strong>For $r < R$ (Inside Earth):</strong> $g_d = \\frac{g r}{R} \\implies g_d \\propto r$. The graph is a <strong>straight line passing through the origin $O$</strong> ($g = 0$ at $r = 0$).</li>
+                <li><strong>At $r = R$ (On Earth's Surface):</strong> $g$ attains its <strong>maximum value</strong> ($g = \\frac{GM}{R^2} \\approx 9.8\\text{ m s}^{-2}$).</li>
+                <li><strong>For $r > R$ (Outside Earth):</strong> $g_h = \\frac{g R^2}{r^2} \\implies g_h \\propto \\frac{1}{r^2}$. The graph is a <strong>hyperbolic curve decreasing rapidly</strong> and approaching zero as $r \\to \\infty$.</li>
+              </ul>
+            </div>
+            <div><strong>Answer (b): Effect of $1\\%$ Shrinkage in Radius at Constant Mass:</strong><br/>
+              Since $g = G M R^{-2}$ and $G, M$ are constants, taking fractional change for small variations:
+              $$\\frac{\\Delta g}{g} \\times 100 = -2 \\left(\\frac{\\Delta R}{R} \\times 100\\right)$$
+              Since the radius shrinks by $1\\%$, $\\frac{\\Delta R}{R} \\times 100 = -1\\%$:
+              $$\\frac{\\Delta g}{g} \\times 100 = -2(-1\\%) = \\mathbf{+2\\%}$$
+              Hence, the value of $g$ on the Earth's surface will <strong>increase by $2\\%$</strong>.
+            </div>
+          </div>
+        `
+      }
+    ];
+
+    function renderPracticeQuestions() {
+      const container = document.getElementById('practiceQuestionsContainer');
+      if (!container) return;
+
+      container.innerHTML = practiceQuestions.map(q => `
+        <div class="bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-xl space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-xl bg-${q.badgeColor}-500/20 text-${q.badgeColor}-300 border border-${q.badgeColor}-500/40 flex items-center justify-center font-extrabold text-sm mono">
+                Q${q.id}
+              </span>
+              <span class="px-3 py-1 rounded-full text-xs font-bold bg-${q.badgeColor}-500/15 text-${q.badgeColor}-300 border border-${q.badgeColor}-500/30">
+                ${q.type}
+              </span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="toggleHint(${q.id})" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-slate-800 text-amber-300 border border-slate-700 hover:bg-slate-700 transition">
+                💡 Hint
+              </button>
+              <button id="solBtn-${q.id}" onclick="toggleSolution(${q.id})" class="px-4 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-md hover:opacity-95 transition">
+                👁 Reveal Step-by-Step Solution
+              </button>
+            </div>
+          </div>
+
+          <div class="text-base sm:text-lg font-semibold text-white leading-relaxed">
+            ${q.question}
+          </div>
+
+          <!-- Hidden Hint -->
+          <div id="hintBox-${q.id}" class="hidden p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/40 text-xs sm:text-sm text-amber-200">
+            <strong>Hint:</strong> ${q.hint}
+          </div>
+
+          <!-- Hidden Step-by-Step Solution -->
+          <div id="solBox-${q.id}" class="hidden p-5 rounded-2xl bg-slate-950/90 border border-emerald-500/40 space-y-2">
+            <div class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 mb-2">
+              ✓ Detailed Step-by-Step Solution
+            </div>
+            ${q.solution}
+          </div>
+        </div>
+      `).join('');
+
+      renderMath();
+    }
+
+    function toggleHint(id) {
+      const box = document.getElementById(`hintBox-${id}`);
+      box.classList.toggle('hidden');
+      renderMath();
+    }
+
+    function toggleSolution(id) {
+      const box = document.getElementById(`solBox-${id}`);
+      const btn = document.getElementById(`solBtn-${id}`);
+      const isHidden = box.classList.contains('hidden');
+      if (isHidden) {
+        box.classList.remove('hidden');
+        btn.innerHTML = '🙈 Hide Solution';
+      } else {
+        box.classList.add('hidden');
+        btn.innerHTML = '👁 Reveal Step-by-Step Solution';
+      }
+      renderMath();
+    }
+
+    function toggleAllSolutions(expand) {
+      practiceQuestions.forEach(q => {
+        const box = document.getElementById(`solBox-${q.id}`);
+        const btn = document.getElementById(`solBtn-${q.id}`);
+        if (expand) {
+          box.classList.remove('hidden');
+          btn.innerHTML = '🙈 Hide Solution';
+        } else {
+          box.classList.add('hidden');
+          btn.innerHTML = '👁 Reveal Step-by-Step Solution';
+        }
+      });
+      renderMath();
+    }
+
+    /* =======================================================================
+       TAB 6: GAMIFIED QUIZ ARENA (6 MCQs)
+       ======================================================================= */
+    const quizQuestions = [
+      {
+        topic: 'Relation Between g & G',
+        question: 'Two spherical balls of masses $1\\text{ kg}$ and $10\\text{ kg}$ are dropped simultaneously from the same height in vacuum. Which of the following statements is scientifically accurate regarding their acceleration due to gravity $g$?',
+        options: [
+          'The $10\\text{ kg}$ ball has $10$ times greater acceleration than the $1\\text{ kg}$ ball.',
+          'Both balls experience the exact same acceleration $g = \\frac{GM}{R^2}$ because $g$ is independent of the mass of the falling body.',
+          'The $1\\text{ kg}$ ball reaches the ground first because it has less inertia.',
+          'Acceleration due to gravity depends on the volume of the balls in vacuum.'
+        ],
+        correct: 1,
+        explanation: 'From $g = \\frac{GM}{R^2}$, the value of acceleration due to gravity is independent of the mass, shape, and size of the falling body ($m$), and depends only on the mass $M$ and radius $R$ of the Earth.'
+      },
+      {
+        topic: 'Density & Gravity Relation',
+        question: 'If $\\rho$ is the uniform average density of the Earth of radius $R$, which of the following correctly expresses the acceleration due to gravity $g$ on the surface of the Earth?',
+        options: [
+          '$g = \\frac{4}{3}\\pi G R^2 \\rho$',
+          '$g = \\frac{4}{3}\\pi G R \\rho$',
+          '$g = \\frac{3 G \\rho}{4 \\pi R}$',
+          '$g = \\frac{4\\pi G R}{3\\rho}$'
+        ],
+        correct: 1,
+        explanation: 'Since $M = \\frac{4}{3}\\pi R^3 \\rho$, substituting $M$ into $g = \\frac{GM}{R^2}$ gives $g = \\frac{G \\times \\frac{4}{3}\\pi R^3 \\rho}{R^2} = \\frac{4}{3}\\pi G R \\rho$ (Equation 19).'
+      },
+      {
+        topic: 'Variation of g with Altitude (h)',
+        question: 'At what height $h$ above the surface of the Earth (of radius $R = 6400\\text{ km}$) does the value of acceleration due to gravity become one-fourth ($\\frac{g}{4}$) of its value on the surface?',
+        options: [
+          '$h = \\frac{R}{2} = 3200\\text{ km}$',
+          '$h = \\frac{3R}{8} = 2400\\text{ km}$',
+          '$h = R = 6400\\text{ km}$',
+          '$h = 2R = 12800\\text{ km}$'
+        ],
+        correct: 2,
+        explanation: 'Using the exact altitude relation $g\' = \\frac{g R^2}{(R+h)^2}$, setting $g\' = \\frac{g}{4}$ gives $\\frac{1}{4} = \\left(\\frac{R}{R+h}\\right)^2 \\implies \\frac{1}{2} = \\frac{R}{R+h} \\implies h = R = 6400\\text{ km}$.'
+      },
+      {
+        topic: 'Variation of g with Depth (d)',
+        question: 'What is the value of acceleration due to gravity ($g\'$) and the weight of a $50\\text{ kg}$ body halfway down towards the centre of the Earth ($d = \\frac{R}{2}$)? (Take surface $g = 9.8\\text{ m s}^{-2}$)',
+        options: [
+          '$g\' = 4.9\\text{ m s}^{-2}$ and Weight $= 245\\text{ N}$',
+          '$g\' = 2.45\\text{ m s}^{-2}$ and Weight $= 122.5\\text{ N}$',
+          '$g\' = 0\\text{ m s}^{-2}$ and Weight $= 0\\text{ N}$',
+          '$g\' = 9.8\\text{ m s}^{-2}$ and Weight $= 490\\text{ N}$'
+        ],
+        correct: 0,
+        explanation: 'At depth $d = \\frac{R}{2}$, $g\' = g\\left(1 - \\frac{d}{R}\\right) = 9.8\\left(1 - \\frac{1}{2}\\right) = 4.9\\text{ m s}^{-2}$. Thus, Weight $= m g\' = 50 \\times 4.9 = 245\\text{ N}$.'
+      },
+      {
+        topic: 'Combined Altitude & Depth',
+        question: 'For a small height $h$ ($h \\ll R$) above the Earth’s surface, the value of acceleration due to gravity is the same as that at a depth $d$ below the surface. What is the correct relation between $d$ and $h$?',
+        options: [
+          '$d = h$',
+          '$d = \\frac{h}{2}$',
+          '$d = 2h$',
+          '$d = 4h$'
+        ],
+        correct: 2,
+        explanation: 'Equating $g_h = g\\left(1 - \\frac{2h}{R}\\right)$ and $g_d = g\\left(1 - \\frac{d}{R}\\right)$ gives $\\frac{d}{R} = \\frac{2h}{R} \\implies d = 2h$.'
+      },
+      {
+        topic: 'Variation of g with Shape of Earth',
+        question: 'Because the Earth is an oblate spheroid with equatorial radius $R_e$ about $21\\text{ km}$ greater than polar radius $R_p$, how does the acceleration due to gravity $g$ vary as we travel from the Equator to the Poles at sea level?',
+        options: [
+          '$g$ decreases from the Equator to the Poles by $1.80\\text{ cm s}^{-2}$.',
+          '$g$ remains constant at all latitudes because Earth’s mass $M$ is constant.',
+          '$g$ is minimum at the Equator and increases as we move towards the Poles (by $1.80\\text{ cm s}^{-2}$ due to shape).',
+          '$g$ becomes zero at the Poles.'
+        ],
+        correct: 2,
+        explanation: 'Since $g = \\frac{GM}{R^2} \\implies g \\propto \\frac{1}{R^2}$, and $R_e > R_p$, acceleration due to gravity is least at the Equator and maximum at the Poles, increasing by $1.80\\text{ cm s}^{-2}$ at sea level due to shape.'
+      }
+    ];
+
+    const quizState = {
+      currentIndex: 0,
+      score: 0,
+      streak: 0,
+      bestStreak: 0,
+      xp: 0,
+      answered: false
+    };
+
+    function renderQuizQuestion() {
+      const q = quizQuestions[quizState.currentIndex];
+      quizState.answered = false;
+
+      document.getElementById('quizActiveContainer').classList.remove('hidden');
+      document.getElementById('quizSummaryContainer').classList.add('hidden');
+      document.getElementById('quizFeedbackBox').classList.add('hidden');
+      document.getElementById('quizNextBtn').classList.add('hidden');
+
+      document.getElementById('quizProgressLabel').textContent = `Question ${quizState.currentIndex + 1} of ${quizQuestions.length}`;
+      document.getElementById('quizProgressBar').style.width = `${((quizState.currentIndex + 1) / quizQuestions.length) * 100}%`;
+      document.getElementById('quizQTopicBadge').textContent = `Topic: ${q.topic}`;
+      document.getElementById('quizQuestionText').innerHTML = q.question;
+
+      const optionsGrid = document.getElementById('quizOptionsGrid');
+      const letters = ['A', 'B', 'C', 'D'];
+      optionsGrid.innerHTML = q.options.map((opt, idx) => `
+        <button id="quizOpt-${idx}" onclick="selectQuizOption(${idx})" class="text-left p-4 rounded-2xl bg-slate-950/80 border border-slate-800 hover:border-indigo-500/60 transition flex items-start gap-3 group">
+          <span class="w-7 h-7 rounded-lg bg-slate-800 text-slate-300 group-hover:bg-indigo-500 group-hover:text-white flex items-center justify-center font-bold text-xs mono shrink-0 mt-0.5 transition">
+            ${letters[idx]}
+          </span>
+          <span class="text-sm sm:text-base text-slate-200 font-medium leading-snug">${opt}</span>
+        </button>
+      `).join('');
+
+      updateQuizHUD();
+      renderMath();
+    }
+
+    function selectQuizOption(selectedIndex) {
+      if (quizState.answered) return;
+      quizState.answered = true;
+
+      const q = quizQuestions[quizState.currentIndex];
+      const isCorrect = selectedIndex === q.correct;
+
+      if (isCorrect) {
+        quizState.score += 1;
+        quizState.streak += 1;
+        quizState.bestStreak = Math.max(quizState.bestStreak, quizState.streak);
+        quizState.xp += 100 + (quizState.streak - 1) * 25;
+      } else {
+        quizState.streak = 0;
+      }
+
+      // Highlight buttons
+      q.options.forEach((_, idx) => {
+        const btn = document.getElementById(`quizOpt-${idx}`);
+        btn.disabled = true;
+        if (idx === q.correct) {
+          btn.className = 'text-left p-4 rounded-2xl bg-emerald-950/60 border-2 border-emerald-500 flex items-start gap-3';
+        } else if (idx === selectedIndex && !isCorrect) {
+          btn.className = 'text-left p-4 rounded-2xl bg-rose-950/60 border-2 border-rose-500 flex items-start gap-3';
+        } else {
+          btn.className = 'text-left p-4 rounded-2xl bg-slate-950/40 border border-slate-800/60 opacity-50 flex items-start gap-3';
+        }
+      });
+
+      // Show Feedback
+      const fbBox = document.getElementById('quizFeedbackBox');
+      const fbTitle = document.getElementById('quizFeedbackTitle');
+      const fbExp = document.getElementById('quizFeedbackExplanation');
+
+      fbBox.classList.remove('hidden');
+      if (isCorrect) {
+        fbBox.className = 'p-5 rounded-2xl bg-emerald-950/40 border border-emerald-500/40 space-y-2';
+        fbTitle.className = 'font-extrabold text-base text-emerald-400';
+        fbTitle.textContent = `🎉 Correct! +${100 + (quizState.streak - 1) * 25} XP`;
+      } else {
+        fbBox.className = 'p-5 rounded-2xl bg-rose-950/40 border border-rose-500/40 space-y-2';
+        fbTitle.className = 'font-extrabold text-base text-rose-400';
+        fbTitle.textContent = '❌ Not Quite Right — Review the Concept Below:';
+      }
+      fbExp.innerHTML = q.explanation;
+
+      const nextBtn = document.getElementById('quizNextBtn');
+      nextBtn.classList.remove('hidden');
+      nextBtn.textContent = quizState.currentIndex === quizQuestions.length - 1 ? 'View Final Trophy 🏆 →' : 'Next Question →';
+
+      updateQuizHUD();
+      renderMath();
+    }
+
+    function updateQuizHUD() {
+      document.getElementById('quizScoreDisplay').textContent = `${quizState.score} / ${quizQuestions.length}`;
+      document.getElementById('quizStreakDisplay').textContent = `${quizState.streak}`;
+      document.getElementById('quizXPDisplay').textContent = `${quizState.xp} XP`;
+
+      let rank = 'Gravity Cadet 🚀';
+      if (quizState.xp >= 550) rank = 'Newtonian Grandmaster 🌟';
+      else if (quizState.xp >= 350) rank = 'Orbital Commander 🛰️';
+      else if (quizState.xp >= 150) rank = 'Physics Explorer 🔭';
+      document.getElementById('quizRankBadge').textContent = `Rank: ${rank}`;
+    }
+
+    function nextQuizQuestion() {
+      if (quizState.currentIndex < quizQuestions.length - 1) {
+        quizState.currentIndex += 1;
+        renderQuizQuestion();
+      } else {
+        showQuizSummary();
+      }
+    }
+
+    function showQuizSummary() {
+      document.getElementById('quizActiveContainer').classList.add('hidden');
+      document.getElementById('quizSummaryContainer').classList.remove('hidden');
+
+      document.getElementById('quizFinalScore').textContent = `${quizState.score} / ${quizQuestions.length}`;
+      document.getElementById('quizFinalXP').textContent = `${quizState.xp} XP`;
+      document.getElementById('quizFinalStreak').textContent = `${quizState.bestStreak} 🔥`;
+
+      const msgEl = document.getElementById('quizFinalMessage');
+      const badgeEl = document.getElementById('quizFinalBadge');
+      if (quizState.score === 6) {
+        badgeEl.textContent = '🏆 Newtonian Grandmaster • 100% Accuracy';
+        msgEl.textContent = 'Outstanding performance! You have mastered the relation between g and G, and the variations of g with altitude, depth, and shape of the Earth.';
+      } else if (quizState.score >= 4) {
+        badgeEl.textContent = '🌟 Orbital Commander • Strong Mastery';
+        msgEl.textContent = 'Great job! Your fundamentals on acceleration due to gravity are solid. Review any missed questions to achieve a perfect 6/6!';
+      } else {
+        badgeEl.textContent = '🚀 Gravity Explorer • Keep Practicing';
+        msgEl.textContent = 'Good effort! Revisit the interactive simulations and step-by-step derivations in Tabs 1 to 4, then try the quiz again.';
+      }
+    }
+
+    function restartQuiz() {
+      quizState.currentIndex = 0;
+      quizState.score = 0;
+      quizState.streak = 0;
+      quizState.bestStreak = 0;
+      quizState.xp = 0;
+      quizState.answered = false;
+      renderQuizQuestion();
+    }
+
+    // Initialize everything on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      updateSim1UI();
+      updateSim2();
+      updateSim3();
+      updateSim4();
+      renderPracticeQuestions();
+      renderQuizQuestion();
+      renderMath();
+    });
+  </script>
+</body>
+</html>
